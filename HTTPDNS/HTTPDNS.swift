@@ -8,17 +8,41 @@
 
 import Foundation
 
+struct DNSRecord {
+    let ip : String
+    let ttl : Int
+    let ips : Array<String>
+}
+
 class HTTPDNS {
     private let SERVER_ADDRESS = "http://119.29.29.29/"
+    private var cache = Dictionary<String,DNSRecord>()
     
-    func requsetRecord(domain: String){
+    static let sharedInstance = HTTPDNS()
+    
+    func getRecordSync(domain: String) -> DNSRecord! {
+        let res = self.cache[domain]
+        if (res != nil){
+            return res!
+        } else {
+            requsetRecord(domain)
+            return nil
+        }
+    }
+    
+    func requsetRecord(domain: String) {
         let urlString = self.SERVER_ADDRESS + "d?dn=" + domain + "&ttl=1"
         let url = NSURL(string: urlString)
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             print(NSString(data: data!, encoding: NSUTF8StringEncoding))
             if let data = data {
-                self.parseResult(data)
+                let res = self.parseResult(data)
+                if (res.ipList.count > 0) {
+                    let record = DNSRecord.init(ip: res.ipList[0], ttl: res.ttl, ips: res.ipList)
+                    self.cache.updateValue(record, forKey: domain)
+                    print(self.cache)
+                }
             }
         }
         
@@ -35,7 +59,7 @@ class HTTPDNS {
         if (ipList.count > 0 && ttl > 0){
             return (ipList,ttl!)
         }
-        return (ipList,ttl!)
+        return ([],0)
     }
     
     
