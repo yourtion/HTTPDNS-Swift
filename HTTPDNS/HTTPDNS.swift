@@ -20,17 +20,37 @@ class HTTPDNS {
     
     static let sharedInstance = HTTPDNS()
     
+    func getRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
+        let res = self.cache[domain]
+        if (res != nil){
+            callback(result: res)
+        } else {
+            requsetRecord(domain, callback: { (res) -> Void in
+                callback(result: res)
+            })
+        }
+    }
+    
+    /**
+     Get DNS record sync (if not exist in cache return nil)
+     
+     - parameter domain: domain name
+     
+     - returns: DSN record
+     */
     func getRecordSync(domain: String) -> DNSRecord! {
         let res = self.cache[domain]
         if (res != nil){
             return res!
         } else {
-            requsetRecord(domain)
-            return nil
+            requsetRecord(domain, callback: { (res) -> Void in
+                print(res)
+            })
         }
+        return nil
     }
     
-    func requsetRecord(domain: String) {
+    private func requsetRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
         let urlString = self.SERVER_ADDRESS + "d?dn=" + domain + "&ttl=1"
         let url = NSURL(string: urlString)
         
@@ -41,7 +61,7 @@ class HTTPDNS {
                 if (res.ipList.count > 0) {
                     let record = DNSRecord.init(ip: res.ipList[0], ttl: res.ttl, ips: res.ipList)
                     self.cache.updateValue(record, forKey: domain)
-                    print(self.cache)
+                    callback(result: record)
                 }
             }
         }
@@ -49,7 +69,7 @@ class HTTPDNS {
         task.resume()
     }
     
-    func parseResult (data: NSData) -> (ipList: Array<String>, ttl: Int){
+    private func parseResult (data: NSData) -> (ipList: Array<String>, ttl: Int){
         let str = String(data: data, encoding: NSUTF8StringEncoding)
         let strArray = str!.componentsSeparatedByString(",")
         let ttl = Int(strArray[1])
