@@ -22,13 +22,12 @@ class HTTPDNS {
     
     func getRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
         let res = self.cache[domain]
-        if (res != nil){
-            callback(result: res)
-        } else {
-            requsetRecord(domain, callback: { (res) -> Void in
-                callback(result: res)
-            })
+        if (res != nil) {
+            return callback(result: res)
         }
+        requsetRecord(domain, callback: { (res) -> Void in
+            callback(result: res)
+        })
     }
     
     /**
@@ -40,29 +39,31 @@ class HTTPDNS {
      */
     func getRecordSync(domain: String) -> DNSRecord! {
         let res = self.cache[domain]
-        if (res != nil){
-            return res!
-        } else {
-            requsetRecord(domain, callback: { (res) -> Void in
-                print(res)
-            })
+        if (res == nil) {
+            requsetRecord(domain, callback: { (res) -> Void in })
+            return nil
         }
-        return nil
+        return res
     }
     
     private func requsetRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
         let urlString = self.SERVER_ADDRESS + "d?dn=" + domain + "&ttl=1"
-        let url = NSURL(string: urlString)
+        guard let url = NSURL(string: urlString) else {
+            print("Error: cannot create URL")
+            return
+        }
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             print(NSString(data: data!, encoding: NSUTF8StringEncoding))
-            if let data = data {
-                let res = self.parseResult(data)
-                if (res.ipList.count > 0) {
-                    let record = DNSRecord.init(ip: res.ipList[0], ttl: res.ttl, ips: res.ipList)
-                    self.cache.updateValue(record, forKey: domain)
-                    callback(result: record)
-                }
+            guard let data = data else {
+                print("Error: data is nil")
+                return
+            }
+            let res = self.parseResult(data)
+            if (res.ipList.count > 0) {
+                let record = DNSRecord.init(ip: res.ipList[0], ttl: res.ttl, ips: res.ipList)
+                self.cache.updateValue(record, forKey: domain)
+                callback(result: record)
             }
         }
         
@@ -81,6 +82,4 @@ class HTTPDNS {
         }
         return ([],0)
     }
-    
-    
 }
