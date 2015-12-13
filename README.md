@@ -22,6 +22,6 @@ print("Sync baidu.com", HTTPDNS.sharedInstance.getRecordSync("baidu.com"))
 
 - [ ] 实现企业版功能（认证接入）
 - [ ] 自动转换 `URLRequest`
-- [ X ] 提供同步获取方法
+- [X] 提供同步获取方法
 - [ ] 允许在初始化时关闭缓存
 - [ ] 提供清除缓存方法
