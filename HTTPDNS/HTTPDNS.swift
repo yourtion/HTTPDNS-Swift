@@ -38,16 +38,18 @@ class HTTPDNS {
      - returns: DSN record
      */
     func getRecordSync(domain: String) -> DNSRecord! {
-        let res = self.cache[domain]
-        if (res == nil) {
-            requsetRecord(domain, callback: { (res) -> Void in })
-            return nil
+        guard let res = self.cache[domain] else {
+            return requsetRecordSync(domain)
         }
         return res
     }
     
+    private func getRequestString(domain: String) -> String {
+        return self.SERVER_ADDRESS + "d?dn=" + domain + "&ttl=1"
+    }
+    
     private func requsetRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
-        let urlString = self.SERVER_ADDRESS + "d?dn=" + domain + "&ttl=1"
+        let urlString = getRequestString(domain)
         guard let url = NSURL(string: urlString) else {
             print("Error: cannot create URL")
             return
@@ -55,31 +57,50 @@ class HTTPDNS {
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             print(NSString(data: data!, encoding: NSUTF8StringEncoding))
-            guard let data = data else {
-                print("Error: data is nil")
+            guard let responseData = data else {
+                print("Error: did not receive data")
                 return
             }
-            let res = self.parseResult(data)
-            if (res.ipList.count > 0) {
-                let record = DNSRecord.init(ip: res.ipList[0], ttl: res.ttl, ips: res.ipList)
-                self.cache.updateValue(record, forKey: domain)
-                callback(result: record)
+            guard error == nil else {
+                print("error calling GET on " + urlString)
+                print(error)
+                return
             }
+            guard let res = self.parseResult(responseData) else {
+                return callback(result: nil)
+            }
+            self.cache.updateValue(res, forKey: domain)
+            callback(result: res)
         }
-        
         task.resume()
     }
     
-    private func parseResult (data: NSData) -> (ipList: Array<String>, ttl: Int){
+    private func requsetRecordSync(domain: String) -> DNSRecord! {
+        let urlString = getRequestString(domain)
+        guard let url = NSURL(string: urlString) else {
+            print("Error: cannot create URL")
+            return nil
+        }
+        guard let data = NSData.init(contentsOfURL: url) else {
+            print("did not receive data")
+            return nil
+        }
+        guard let res = self.parseResult(data) else {
+            print("Error: parseResult error")
+            return nil
+        }
+        self.cache.updateValue(res, forKey: domain)
+        return res
+    }
+    
+    private func parseResult (data: NSData) -> DNSRecord! {
         let str = String(data: data, encoding: NSUTF8StringEncoding)
         let strArray = str!.componentsSeparatedByString(",")
-        let ttl = Int(strArray[1])
         let ipStr = strArray[0] as String
         let ipList = ipStr.componentsSeparatedByString(";") as Array<String>
-        print(ipList, ttl)
-        if (ipList.count > 0 && ttl > 0){
-            return (ipList,ttl!)
+        guard let ttl = Int(strArray[1]) where (ipList.count > 0 && ttl > 0) else {
+            return nil
         }
-        return ([],0)
+        return DNSRecord.init(ip: ipList[0], ttl: ttl, ips: ipList)
     }
 }
