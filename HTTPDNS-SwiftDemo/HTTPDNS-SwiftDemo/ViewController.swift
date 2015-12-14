@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import HTTPDNS
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        HTTPDNS.sharedInstance.getRecord("qq.com", callback: { (result) -> Void in
+            print("Async QQ.com", result)
+        })
+        print("Sync baidu.com", HTTPDNS.sharedInstance.getRecordSync("baidu.com"))
     }
 
     override func didReceiveMemoryWarning() {
