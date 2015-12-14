@@ -8,19 +8,19 @@
 
 import Foundation
 
-struct DNSRecord {
+public struct DNSRecord {
     let ip : String
     let ttl : Int
     let ips : Array<String>
 }
 
-class HTTPDNS {
+public class HTTPDNS {
     private let SERVER_ADDRESS = "http://119.29.29.29/"
     private var cache = Dictionary<String,DNSRecord>()
     
-    static let sharedInstance = HTTPDNS()
+    public static let sharedInstance = HTTPDNS()
     
-    func getRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
+    public func getRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
         let res = self.cache[domain]
         if (res != nil) {
             return callback(result: res)
@@ -37,7 +37,7 @@ class HTTPDNS {
      
      - returns: DSN record
      */
-    func getRecordSync(domain: String) -> DNSRecord! {
+    public func getRecordSync(domain: String) -> DNSRecord! {
         guard let res = self.cache[domain] else {
             return requsetRecordSync(domain)
         }
