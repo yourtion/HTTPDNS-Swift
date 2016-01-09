@@ -15,8 +15,8 @@ public struct DNSRecord {
 }
 
 public class HTTPDNS {
-    private let SERVER_ADDRESS = "http://119.29.29.29/"
-    private var cache = Dictionary<String,DNSRecord>()
+    let SERVER_ADDRESS = "http://119.29.29.29/"
+    var cache = Dictionary<String,DNSRecord>()
     
     public static let sharedInstance = HTTPDNS()
     
@@ -44,11 +44,11 @@ public class HTTPDNS {
         return res
     }
     
-    private func getRequestString(domain: String) -> String {
+    func getRequestString(domain: String) -> String {
         return self.SERVER_ADDRESS + "d?dn=" + domain + "&ttl=1"
     }
     
-    private func requsetRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
+    func requsetRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
         let urlString = getRequestString(domain)
         guard let url = NSURL(string: urlString) else {
             print("Error: cannot create URL")
@@ -75,7 +75,7 @@ public class HTTPDNS {
         task.resume()
     }
     
-    private func requsetRecordSync(domain: String) -> DNSRecord! {
+    func requsetRecordSync(domain: String) -> DNSRecord! {
         let urlString = getRequestString(domain)
         guard let url = NSURL(string: urlString) else {
             print("Error: cannot create URL")
@@ -93,7 +93,7 @@ public class HTTPDNS {
         return res
     }
     
-    private func parseResult (data: NSData) -> DNSRecord! {
+    func parseResult (data: NSData) -> DNSRecord! {
         let str = String(data: data, encoding: NSUTF8StringEncoding)
         let strArray = str!.componentsSeparatedByString(",")
         let ipStr = strArray[0] as String
