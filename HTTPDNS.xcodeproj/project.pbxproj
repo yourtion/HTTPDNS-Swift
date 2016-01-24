@@ -13,12 +13,8 @@
 		CB5BBFB21C4214E500564786 /* HTTPDNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9C76441C1D544A003502B6 /* HTTPDNS.framework */; };
 		CB9C76481C1D544A003502B6 /* HTTPDNS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB9C76471C1D544A003502B6 /* HTTPDNS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB9C76531C1D5451003502B6 /* HTTPDNS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB9C76471C1D544A003502B6 /* HTTPDNS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CB9C76691C1D54F4003502B6 /* HTTPDNS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB9C76471C1D544A003502B6 /* HTTPDNS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB9C76711C1D5567003502B6 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
 		CB9C76721C1D5567003502B6 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
-		CB9C76741C1D5567003502B6 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
-		CB9C76771C1D5985003502B6 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
-		CB9C767A1C1D5985003502B6 /* HTTPDNS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB9C76471C1D544A003502B6 /* HTTPDNS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +43,7 @@
 		CB9C76471C1D544A003502B6 /* HTTPDNS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPDNS.h; sourceTree = "<group>"; };
 		CB9C76491C1D544A003502B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB9C76581C1D5451003502B6 /* HTTPDNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTTPDNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB9C766E1C1D54F4003502B6 /* HTTPDNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTTPDNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9C76701C1D5567003502B6 /* HTTPDNS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDNS.swift; sourceTree = "<group>"; };
-		CB9C767F1C1D5985003502B6 /* HTTPDNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTTPDNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,20 +77,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CB9C76671C1D54F4003502B6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB9C76781C1D5985003502B6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -123,8 +103,6 @@
 			children = (
 				CB9C76441C1D544A003502B6 /* HTTPDNS.framework */,
 				CB9C76581C1D5451003502B6 /* HTTPDNS.framework */,
-				CB9C766E1C1D54F4003502B6 /* HTTPDNS.framework */,
-				CB9C767F1C1D5985003502B6 /* HTTPDNS.framework */,
 				CB5BBFA11C42149300564786 /* HTTPDNSTests iOS.xctest */,
 				CB5BBFB71C4214E500564786 /* HTTPDNSTests OSX.xctest */,
 			);
@@ -157,22 +135,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9C76531C1D5451003502B6 /* HTTPDNS.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB9C76681C1D54F4003502B6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CB9C76691C1D54F4003502B6 /* HTTPDNS.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB9C76791C1D5985003502B6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CB9C767A1C1D5985003502B6 /* HTTPDNS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,42 +213,6 @@
 			productReference = CB9C76581C1D5451003502B6 /* HTTPDNS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CB9C76651C1D54F4003502B6 /* HTTPDNS tvOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CB9C766B1C1D54F4003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS tvOS" */;
-			buildPhases = (
-				CB9C76661C1D54F4003502B6 /* Sources */,
-				CB9C76671C1D54F4003502B6 /* Frameworks */,
-				CB9C76681C1D54F4003502B6 /* Headers */,
-				CB9C766A1C1D54F4003502B6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "HTTPDNS tvOS";
-			productName = HTTPDNS;
-			productReference = CB9C766E1C1D54F4003502B6 /* HTTPDNS.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		CB9C76751C1D5985003502B6 /* HTTPDNS watchOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CB9C767C1C1D5985003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS watchOS" */;
-			buildPhases = (
-				CB9C76761C1D5985003502B6 /* Sources */,
-				CB9C76781C1D5985003502B6 /* Frameworks */,
-				CB9C76791C1D5985003502B6 /* Headers */,
-				CB9C767B1C1D5985003502B6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "HTTPDNS watchOS";
-			productName = HTTPDNS;
-			productReference = CB9C767F1C1D5985003502B6 /* HTTPDNS.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -319,8 +245,6 @@
 			targets = (
 				CB9C76431C1D544A003502B6 /* HTTPDNS iOS */,
 				CB9C764F1C1D5451003502B6 /* HTTPDNS OSX */,
-				CB9C76651C1D54F4003502B6 /* HTTPDNS tvOS */,
-				CB9C76751C1D5985003502B6 /* HTTPDNS watchOS */,
 				CB5BBFA01C42149300564786 /* HTTPDNSTests iOS */,
 				CB5BBFAC1C4214E500564786 /* HTTPDNSTests OSX */,
 			);
@@ -350,20 +274,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CB9C76541C1D5451003502B6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB9C766A1C1D54F4003502B6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB9C767B1C1D5985003502B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,22 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB9C76721C1D5567003502B6 /* HTTPDNS.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB9C76661C1D54F4003502B6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CB9C76741C1D5567003502B6 /* HTTPDNS.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB9C76761C1D5985003502B6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CB9C76771C1D5985003502B6 /* HTTPDNS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,84 +536,6 @@
 			};
 			name = Release;
 		};
-		CB9C766C1C1D54F4003502B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/HTTPDNS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNS;
-				PRODUCT_NAME = HTTPDNS;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		CB9C766D1C1D54F4003502B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/HTTPDNS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNS;
-				PRODUCT_NAME = HTTPDNS;
-				SDKROOT = appletvos;
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-			};
-			name = Release;
-		};
-		CB9C767D1C1D5985003502B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/HTTPDNS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNS;
-				PRODUCT_NAME = HTTPDNS;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		CB9C767E1C1D5985003502B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/HTTPDNS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNS;
-				PRODUCT_NAME = HTTPDNS;
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -730,6 +546,7 @@
 				CB5BBFAA1C42149300564786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CB5BBFB41C4214E500564786 /* Build configuration list for PBXNativeTarget "HTTPDNSTests OSX" */ = {
 			isa = XCConfigurationList;
@@ -763,24 +580,6 @@
 			buildConfigurations = (
 				CB9C76561C1D5451003502B6 /* Debug */,
 				CB9C76571C1D5451003502B6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CB9C766B1C1D54F4003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS tvOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB9C766C1C1D54F4003502B6 /* Debug */,
-				CB9C766D1C1D54F4003502B6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CB9C767C1C1D5985003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS watchOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB9C767D1C1D5985003502B6 /* Debug */,
-				CB9C767E1C1D5985003502B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
