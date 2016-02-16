@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HTTPDNS
 
 class ViewController: UIViewController {
 

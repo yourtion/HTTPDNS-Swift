@@ -12,7 +12,8 @@
 		CB1E7E651C0707910016890A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1E7E631C0707910016890A /* Main.storyboard */; };
 		CB1E7E671C0707910016890A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E7E661C0707910016890A /* Assets.xcassets */; };
 		CB1E7E6A1C0707910016890A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1E7E681C0707910016890A /* LaunchScreen.storyboard */; };
-		CB9C768A1C1D5C28003502B6 /* HTTPDNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9C76891C1D5C28003502B6 /* HTTPDNS.framework */; };
+		CBF0DB141C4F7A3300944959 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DB121C4F7A3300944959 /* HTTPDNS.swift */; };
+		CBF0DB151C4F7A3300944959 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBF0DB131C4F7A3300944959 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,9 @@
 		CB1E7E661C0707910016890A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1E7E691C0707910016890A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB1E7E6B1C0707910016890A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB9C76891C1D5C28003502B6 /* HTTPDNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPDNS.framework; path = "../../../../Library/Developer/Xcode/DerivedData/HTTPDNS-aijyeumpwakxyjcrgzomehtjxvbe/Build/Products/Debug-iphoneos/HTTPDNS.framework"; sourceTree = "<group>"; };
+		CBF0DB111C4F7A3300944959 /* HTTPDNS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDNS.h; sourceTree = "<group>"; };
+		CBF0DB121C4F7A3300944959 /* HTTPDNS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDNS.swift; sourceTree = "<group>"; };
+		CBF0DB131C4F7A3300944959 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,7 +34,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB9C768A1C1D5C28003502B6 /* HTTPDNS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,7 +43,7 @@
 		CB1E7E531C0707910016890A = {
 			isa = PBXGroup;
 			children = (
-				CB9C76891C1D5C28003502B6 /* HTTPDNS.framework */,
+				CBF0DB101C4F7A3300944959 /* HTTPDNS */,
 				CB1E7E5E1C0707910016890A /* HTTPDNS-SwiftDemo */,
 				CB1E7E5D1C0707910016890A /* Products */,
 			);
@@ -66,6 +68,16 @@
 				CB1E7E6B1C0707910016890A /* Info.plist */,
 			);
 			path = "HTTPDNS-SwiftDemo";
+			sourceTree = "<group>";
+		};
+		CBF0DB101C4F7A3300944959 /* HTTPDNS */ = {
+			isa = PBXGroup;
+			children = (
+				CBF0DB111C4F7A3300944959 /* HTTPDNS.h */,
+				CBF0DB121C4F7A3300944959 /* HTTPDNS.swift */,
+				CBF0DB131C4F7A3300944959 /* Info.plist */,
+			);
+			path = HTTPDNS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF0DB151C4F7A3300944959 /* Info.plist in Resources */,
 				CB1E7E6A1C0707910016890A /* LaunchScreen.storyboard in Resources */,
 				CB1E7E671C0707910016890A /* Assets.xcassets in Resources */,
 				CB1E7E651C0707910016890A /* Main.storyboard in Resources */,
@@ -141,6 +154,7 @@
 			files = (
 				CB1E7E621C0707910016890A /* ViewController.swift in Sources */,
 				CB1E7E601C0707910016890A /* AppDelegate.swift in Sources */,
+				CBF0DB141C4F7A3300944959 /* HTTPDNS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
