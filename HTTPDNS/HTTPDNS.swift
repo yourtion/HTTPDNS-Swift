@@ -20,6 +20,8 @@ public class HTTPDNS {
     
     public static let sharedInstance = HTTPDNS()
     
+    private init() {}
+    
     public func getRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
         let res = self.cache[domain]
         if (res != nil) {
@@ -44,6 +46,10 @@ public class HTTPDNS {
         return res
     }
     
+    public func cleanCache() {
+        self.cache.removeAll()
+    }
+    
     func getRequestString(domain: String) -> String {
         return self.SERVER_ADDRESS + "d?dn=" + domain + "&ttl=1"
     }
@@ -58,11 +64,11 @@ public class HTTPDNS {
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
             print(NSString(data: data!, encoding: NSUTF8StringEncoding))
             guard let responseData = data else {
-                print("Error: did not receive data")
+                print("Error: Didn't receive data")
                 return
             }
             guard error == nil else {
-                print("error calling GET on " + urlString)
+                print("Error: Calling GET error on " + urlString)
                 print(error)
                 return
             }
@@ -78,15 +84,15 @@ public class HTTPDNS {
     func requsetRecordSync(domain: String) -> DNSRecord! {
         let urlString = getRequestString(domain)
         guard let url = NSURL(string: urlString) else {
-            print("Error: cannot create URL")
+            print("Error: Can't create URL")
             return nil
         }
         guard let data = NSData.init(contentsOfURL: url) else {
-            print("did not receive data")
+            print("Error: Did not receive data")
             return nil
         }
         guard let res = self.parseResult(data) else {
-            print("Error: parseResult error")
+            print("Error: ParseResult error")
             return nil
         }
         self.cache.updateValue(res, forKey: domain)
