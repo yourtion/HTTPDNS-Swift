@@ -28,6 +28,8 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
         
         requestHTTP(NSURL(string: "http://baidu.com/"))
         
+        print("Sync baidu.com cached", HTTPDNS.sharedInstance.getRecordSync("baidu.com"))
+        
     }
     
     func requestHTTPS(url:NSURL!) {
@@ -122,7 +124,6 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
     func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData){
         self.data.appendData(data)
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

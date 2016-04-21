@@ -12,6 +12,8 @@ public struct DNSRecord {
     let ip : String
     let ttl : Int
     let ips : Array<String>
+    let timeout : Int
+    let cached : Bool
 }
 
 public class HTTPDNS {
@@ -23,7 +25,7 @@ public class HTTPDNS {
     private init() {}
     
     public func getRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
-        let res = self.cache[domain]
+        let res = getCacheResult(domain)
         if (res != nil) {
             return callback(result: res)
         }
@@ -40,8 +42,24 @@ public class HTTPDNS {
      - returns: DSN record
      */
     public func getRecordSync(domain: String) -> DNSRecord! {
-        guard let res = self.cache[domain] else {
+        guard let res = getCacheResult(domain) else {
             return requsetRecordSync(domain)
+        }
+        return res
+    }
+    
+    func setCache(domain: String, record: DNSRecord) {
+        let res = DNSRecord.init(ip: record.ip, ttl: record.ttl, ips: record.ips, timeout: record.timeout, cached: true)
+        self.cache.updateValue(res, forKey:domain)
+    }
+    
+    func getCacheResult(domain: String) -> DNSRecord! {
+        guard let res = self.cache[domain] else {
+            return nil
+        }
+        if (res.timeout <= getSecondTimestamp()){
+            self.cache.removeValueForKey(domain)
+            return nil
         }
         return res
     }
@@ -75,7 +93,7 @@ public class HTTPDNS {
             guard let res = self.parseResult(responseData) else {
                 return callback(result: nil)
             }
-            self.cache.updateValue(res, forKey: domain)
+            self.setCache(domain, record: res)
             callback(result: res)
         }
         task.resume()
@@ -95,8 +113,12 @@ public class HTTPDNS {
             print("Error: ParseResult error")
             return nil
         }
-        self.cache.updateValue(res, forKey: domain)
+        setCache(domain, record: res)
         return res
+    }
+    
+    func getSecondTimestamp() -> Int {
+        return Int(NSDate().timeIntervalSince1970 * 1000)
     }
     
     func parseResult (data: NSData) -> DNSRecord! {
@@ -107,6 +129,7 @@ public class HTTPDNS {
         guard let ttl = Int(strArray[1]) where (ipList.count > 0 && ttl > 0) else {
             return nil
         }
-        return DNSRecord.init(ip: ipList[0], ttl: ttl, ips: ipList)
+        let timeout = getSecondTimestamp() + ttl
+        return DNSRecord.init(ip: ipList[0], ttl: ttl, ips: ipList, timeout: timeout, cached: false)
     }
 }

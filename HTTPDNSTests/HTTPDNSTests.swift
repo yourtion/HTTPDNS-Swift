@@ -46,6 +46,7 @@ class HTTPDNS_iOSTests: XCTestCase {
         XCTAssertEqual(RES_Parsed.ips[1], "192.243.118.111")
         XCTAssertEqual(RES_Parsed.ips[2], "192.243.118.112")
         XCTAssertEqual(RES_Parsed.ttl, 600)
+        XCTAssertEqual(RES_Parsed.cached, false)
     }
     
 }
