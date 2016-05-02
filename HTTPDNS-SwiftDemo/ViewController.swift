@@ -18,17 +18,17 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        HTTPDNS.sharedInstance.getRecord("qq.com", callback: { (result) -> Void in
+        HTTPDNS.sharedInstance.getRecord("www.qq.com", callback: { (result) -> Void in
             print("Async QQ.com", result)
         })
         
-        print("Sync baidu.com", HTTPDNS.sharedInstance.getRecordSync("baidu.com"))
+        print("Sync baidu.com", HTTPDNS.sharedInstance.getRecordSync("www.baidu.com"))
         
         requestHTTPS(NSURL(string: "https://api.github.com/users/octocat/orgs")!)
         
         requestHTTP(NSURL(string: "http://baidu.com/"))
         
-        print("Sync baidu.com cached", HTTPDNS.sharedInstance.getRecordSync("baidu.com"))
+        print("Sync baidu.com cached", HTTPDNS.sharedInstance.getRecordSync("www.baidu.com"))
         
     }
     
@@ -36,7 +36,10 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
         let host = url.host
         self.host = host!
         let res = HTTPDNS.sharedInstance.getRecordSync(host!)
-        let newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: res.ip)
+        var newURL = url.absoluteString
+        if (res != nil) {
+            newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: res.ip)
+        }
         print("RequestHTTPS NewURL:\(newURL)")
         
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -51,7 +54,10 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
     func requestHTTP(url:NSURL!) {
         let host = url.host
         let res = HTTPDNS.sharedInstance.getRecordSync(host!)
-        let newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: res.ip)
+        var newURL = url.absoluteString
+        if (res != nil) {
+            newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: res.ip)
+        }
         print("RequestHTTP NewURL:\(newURL)")
         
         let request = NSMutableURLRequest(URL: NSURL(string: newURL)!)
