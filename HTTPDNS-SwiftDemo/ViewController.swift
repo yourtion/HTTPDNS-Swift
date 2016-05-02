@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import HTTPDNS
 
 class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDelegate {
-
     
     var data = NSMutableData()
     var host = ""
@@ -35,8 +35,8 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
     func requestHTTPS(url:NSURL!) {
         let host = url.host
         self.host = host!
-        let ip = HTTPDNS.sharedInstance.getRecordSync(host!)
-        let newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: ip.ip)
+        let res = HTTPDNS.sharedInstance.getRecordSync(host!)
+        let newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: res.ip)
         print("RequestHTTPS NewURL:\(newURL)")
         
         let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -50,8 +50,8 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
     
     func requestHTTP(url:NSURL!) {
         let host = url.host
-        let ip = HTTPDNS.sharedInstance.getRecordSync(host!)
-        let newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: ip.ip)
+        let res = HTTPDNS.sharedInstance.getRecordSync(host!)
+        let newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: res.ip)
         print("RequestHTTP NewURL:\(newURL)")
         
         let request = NSMutableURLRequest(URL: NSURL(string: newURL)!)

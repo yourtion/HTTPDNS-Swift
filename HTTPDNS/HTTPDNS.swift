@@ -9,11 +9,11 @@
 import Foundation
 
 public struct DNSRecord {
-    let ip : String
+    public let ip : String
     let ttl : Int
-    let ips : Array<String>
+    public let ips : Array<String>
     let timeout : Int
-    let cached : Bool
+    public let cached : Bool
 }
 
 public class HTTPDNS {
