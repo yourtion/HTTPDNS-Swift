@@ -7,38 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB5BBFA41C42149300564786 /* HTTPDNSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BBFA31C42149300564786 /* HTTPDNSTests.swift */; };
-		CB5BBFA61C42149300564786 /* HTTPDNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9C76441C1D544A003502B6 /* HTTPDNS.framework */; };
-		CB5BBFB01C4214E500564786 /* HTTPDNSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BBFA31C42149300564786 /* HTTPDNSTests.swift */; };
-		CB5BBFB21C4214E500564786 /* HTTPDNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB9C76441C1D544A003502B6 /* HTTPDNS.framework */; };
+		CB419F701CC8E8A800EF1886 /* DSNPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BBFA31C42149300564786 /* DSNPodTests.swift */; };
+		CB419F711CC8E8A800EF1886 /* AliYunTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C8F1CC8CEAB0023C4C2 /* AliYunTest.swift */; };
+		CB419F721CC8E8B700EF1886 /* DSNPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BBFA31C42149300564786 /* DSNPodTests.swift */; };
+		CB419F731CC8E8B700EF1886 /* AliYunTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C8F1CC8CEAB0023C4C2 /* AliYunTest.swift */; };
+		CB419F741CC8E8CF00EF1886 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C791CC8AB390023C4C2 /* Utils.swift */; };
+		CB419F751CC8E8CF00EF1886 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
+		CB419F761CC8E8CF00EF1886 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C841CC8B7FB0023C4C2 /* Factory.swift */; };
+		CB419F771CC8E8CF00EF1886 /* DNSPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */; };
+		CB419F781CC8E8CF00EF1886 /* AliYun.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C891CC8BCF00023C4C2 /* AliYun.swift */; };
+		CB419F791CC8E8DA00EF1886 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C791CC8AB390023C4C2 /* Utils.swift */; };
+		CB419F7A1CC8E8DA00EF1886 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
+		CB419F7B1CC8E8DA00EF1886 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C841CC8B7FB0023C4C2 /* Factory.swift */; };
+		CB419F7C1CC8E8DA00EF1886 /* DNSPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */; };
+		CB419F7D1CC8E8DA00EF1886 /* AliYun.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C891CC8BCF00023C4C2 /* AliYun.swift */; };
+		CB745C7A1CC8AB390023C4C2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C791CC8AB390023C4C2 /* Utils.swift */; };
+		CB745C7B1CC8AB390023C4C2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C791CC8AB390023C4C2 /* Utils.swift */; };
+		CB745C801CC8AC790023C4C2 /* DNSPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */; };
+		CB745C811CC8AC790023C4C2 /* DNSPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */; };
+		CB745C851CC8B7FB0023C4C2 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C841CC8B7FB0023C4C2 /* Factory.swift */; };
+		CB745C861CC8B7FB0023C4C2 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C841CC8B7FB0023C4C2 /* Factory.swift */; };
+		CB745C8A1CC8BCF00023C4C2 /* AliYun.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C891CC8BCF00023C4C2 /* AliYun.swift */; };
+		CB745C8B1CC8BCF00023C4C2 /* AliYun.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C891CC8BCF00023C4C2 /* AliYun.swift */; };
 		CB9C76481C1D544A003502B6 /* HTTPDNS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB9C76471C1D544A003502B6 /* HTTPDNS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB9C76531C1D5451003502B6 /* HTTPDNS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB9C76471C1D544A003502B6 /* HTTPDNS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CB9C76711C1D5567003502B6 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
 		CB9C76721C1D5567003502B6 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CB5BBFA71C42149300564786 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB9C763B1C1D544A003502B6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CB9C76431C1D544A003502B6;
-			remoteInfo = "HTTPDNS iOS";
-		};
-		CB5BBFD31C4215BD00564786 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB9C763B1C1D544A003502B6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CB9C764F1C1D5451003502B6;
-			remoteInfo = "HTTPDNS OSX";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		CB5BBFA11C42149300564786 /* HTTPDNSTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HTTPDNSTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB5BBFA31C42149300564786 /* HTTPDNSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDNSTests.swift; sourceTree = "<group>"; };
+		CB419F661CC8E57700EF1886 /* HTTPDNSTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HTTPDNSTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB5BBFA31C42149300564786 /* DSNPodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNPodTests.swift; sourceTree = "<group>"; };
 		CB5BBFA51C42149300564786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB5BBFB71C4214E500564786 /* HTTPDNSTests OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HTTPDNSTests OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB745C791CC8AB390023C4C2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSPod.swift; sourceTree = "<group>"; };
+		CB745C841CC8B7FB0023C4C2 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		CB745C891CC8BCF00023C4C2 /* AliYun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliYun.swift; sourceTree = "<group>"; };
+		CB745C8F1CC8CEAB0023C4C2 /* AliYunTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliYunTest.swift; sourceTree = "<group>"; };
 		CB9C76441C1D544A003502B6 /* HTTPDNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HTTPDNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB9C76471C1D544A003502B6 /* HTTPDNS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPDNS.h; sourceTree = "<group>"; };
 		CB9C76491C1D544A003502B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,11 +53,10 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CB5BBF9E1C42149300564786 /* Frameworks */ = {
+		CB419F601CC8E57700EF1886 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB5BBFA61C42149300564786 /* HTTPDNS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB5BBFB21C4214E500564786 /* HTTPDNS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +87,8 @@
 		CB5BBFA21C42149300564786 /* HTTPDNSTests */ = {
 			isa = PBXGroup;
 			children = (
-				CB5BBFA31C42149300564786 /* HTTPDNSTests.swift */,
+				CB5BBFA31C42149300564786 /* DSNPodTests.swift */,
+				CB745C8F1CC8CEAB0023C4C2 /* AliYunTest.swift */,
 				CB5BBFA51C42149300564786 /* Info.plist */,
 			);
 			path = HTTPDNSTests;
@@ -103,8 +108,8 @@
 			children = (
 				CB9C76441C1D544A003502B6 /* HTTPDNS.framework */,
 				CB9C76581C1D5451003502B6 /* HTTPDNS.framework */,
-				CB5BBFA11C42149300564786 /* HTTPDNSTests iOS.xctest */,
 				CB5BBFB71C4214E500564786 /* HTTPDNSTests OSX.xctest */,
+				CB419F661CC8E57700EF1886 /* HTTPDNSTests iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,8 +118,12 @@
 			isa = PBXGroup;
 			children = (
 				CB9C76471C1D544A003502B6 /* HTTPDNS.h */,
+				CB745C791CC8AB390023C4C2 /* Utils.swift */,
 				CB9C76701C1D5567003502B6 /* HTTPDNS.swift */,
 				CB9C76491C1D544A003502B6 /* Info.plist */,
+				CB745C841CC8B7FB0023C4C2 /* Factory.swift */,
+				CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */,
+				CB745C891CC8BCF00023C4C2 /* AliYun.swift */,
 			);
 			path = HTTPDNS;
 			sourceTree = "<group>";
@@ -141,22 +150,21 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CB5BBFA01C42149300564786 /* HTTPDNSTests iOS */ = {
+		CB419F571CC8E57700EF1886 /* HTTPDNSTests iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB5BBFAB1C42149300564786 /* Build configuration list for PBXNativeTarget "HTTPDNSTests iOS" */;
+			buildConfigurationList = CB419F631CC8E57700EF1886 /* Build configuration list for PBXNativeTarget "HTTPDNSTests iOS" */;
 			buildPhases = (
-				CB5BBF9D1C42149300564786 /* Sources */,
-				CB5BBF9E1C42149300564786 /* Frameworks */,
-				CB5BBF9F1C42149300564786 /* Resources */,
+				CB419F5A1CC8E57700EF1886 /* Sources */,
+				CB419F601CC8E57700EF1886 /* Frameworks */,
+				CB419F621CC8E57700EF1886 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CB5BBFA81C42149300564786 /* PBXTargetDependency */,
 			);
 			name = "HTTPDNSTests iOS";
 			productName = HTTPDNSTests;
-			productReference = CB5BBFA11C42149300564786 /* HTTPDNSTests iOS.xctest */;
+			productReference = CB419F661CC8E57700EF1886 /* HTTPDNSTests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CB5BBFAC1C4214E500564786 /* HTTPDNSTests OSX */ = {
@@ -170,7 +178,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CB5BBFD41C4215BD00564786 /* PBXTargetDependency */,
 			);
 			name = "HTTPDNSTests OSX";
 			productName = HTTPDNSTests;
@@ -223,9 +230,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Yourtion;
 				TargetAttributes = {
-					CB5BBFA01C42149300564786 = {
-						CreatedOnToolsVersion = 7.2;
-					};
 					CB9C76431C1D544A003502B6 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -245,14 +249,14 @@
 			targets = (
 				CB9C76431C1D544A003502B6 /* HTTPDNS iOS */,
 				CB9C764F1C1D5451003502B6 /* HTTPDNS OSX */,
-				CB5BBFA01C42149300564786 /* HTTPDNSTests iOS */,
 				CB5BBFAC1C4214E500564786 /* HTTPDNSTests OSX */,
+				CB419F571CC8E57700EF1886 /* HTTPDNSTests iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CB5BBF9F1C42149300564786 /* Resources */ = {
+		CB419F621CC8E57700EF1886 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -283,11 +287,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		CB5BBF9D1C42149300564786 /* Sources */ = {
+		CB419F5A1CC8E57700EF1886 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB5BBFA41C42149300564786 /* HTTPDNSTests.swift in Sources */,
+				CB419F791CC8E8DA00EF1886 /* Utils.swift in Sources */,
+				CB419F7A1CC8E8DA00EF1886 /* HTTPDNS.swift in Sources */,
+				CB419F7B1CC8E8DA00EF1886 /* Factory.swift in Sources */,
+				CB419F7C1CC8E8DA00EF1886 /* DNSPod.swift in Sources */,
+				CB419F7D1CC8E8DA00EF1886 /* AliYun.swift in Sources */,
+				CB419F701CC8E8A800EF1886 /* DSNPodTests.swift in Sources */,
+				CB419F711CC8E8A800EF1886 /* AliYunTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +305,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB5BBFB01C4214E500564786 /* HTTPDNSTests.swift in Sources */,
+				CB419F741CC8E8CF00EF1886 /* Utils.swift in Sources */,
+				CB419F751CC8E8CF00EF1886 /* HTTPDNS.swift in Sources */,
+				CB419F761CC8E8CF00EF1886 /* Factory.swift in Sources */,
+				CB419F771CC8E8CF00EF1886 /* DNSPod.swift in Sources */,
+				CB419F781CC8E8CF00EF1886 /* AliYun.swift in Sources */,
+				CB419F721CC8E8B700EF1886 /* DSNPodTests.swift in Sources */,
+				CB419F731CC8E8B700EF1886 /* AliYunTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +319,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB745C851CC8B7FB0023C4C2 /* Factory.swift in Sources */,
+				CB745C8A1CC8BCF00023C4C2 /* AliYun.swift in Sources */,
 				CB9C76711C1D5567003502B6 /* HTTPDNS.swift in Sources */,
+				CB745C7A1CC8AB390023C4C2 /* Utils.swift in Sources */,
+				CB745C801CC8AC790023C4C2 /* DNSPod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,45 +331,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB745C861CC8B7FB0023C4C2 /* Factory.swift in Sources */,
+				CB745C8B1CC8BCF00023C4C2 /* AliYun.swift in Sources */,
 				CB9C76721C1D5567003502B6 /* HTTPDNS.swift in Sources */,
+				CB745C7B1CC8AB390023C4C2 /* Utils.swift in Sources */,
+				CB745C811CC8AC790023C4C2 /* DNSPod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		CB5BBFA81C42149300564786 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CB9C76431C1D544A003502B6 /* HTTPDNS iOS */;
-			targetProxy = CB5BBFA71C42149300564786 /* PBXContainerItemProxy */;
-		};
-		CB5BBFD41C4215BD00564786 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CB9C764F1C1D5451003502B6 /* HTTPDNS OSX */;
-			targetProxy = CB5BBFD31C4215BD00564786 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		CB5BBFA91C42149300564786 /* Debug */ = {
+		CB419F641CC8E57700EF1886 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = HTTPDNSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		CB5BBFAA1C42149300564786 /* Release */ = {
+		CB419F651CC8E57700EF1886 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = HTTPDNSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
@@ -549,11 +564,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB5BBFAB1C42149300564786 /* Build configuration list for PBXNativeTarget "HTTPDNSTests iOS" */ = {
+		CB419F631CC8E57700EF1886 /* Build configuration list for PBXNativeTarget "HTTPDNSTests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CB5BBFA91C42149300564786 /* Debug */,
-				CB5BBFAA1C42149300564786 /* Release */,
+				CB419F641CC8E57700EF1886 /* Debug */,
+				CB419F651CC8E57700EF1886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

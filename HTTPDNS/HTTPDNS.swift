@@ -8,29 +8,41 @@
 
 import Foundation
 
-public struct DNSRecord {
+public struct HTTPDNSResult {
     public let ip : String
     let ttl : Int
     public let ips : Array<String>
     let timeout : Int
-    public let cached : Bool
+    public var cached : Bool
 }
 
 public class HTTPDNS {
-    let SERVER_ADDRESS = "http://119.29.29.29/"
-    var cache = Dictionary<String,DNSRecord>()
     
+    var cache = Dictionary<String,HTTPDNSResult>()
+    
+    /// HTTPDNS sharedInstance
     public static let sharedInstance = HTTPDNS()
     
     private init() {}
     
-    public func getRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
+    let DNS = HTTPDNSFactory().getAliYun()
+    
+    /**
+     Get DNS record asycn
+     
+     - parameter domain:   domain name
+     - parameter callback: callback block with DNS record
+     */
+    public func getRecord(domain: String, callback: (result:HTTPDNSResult!) -> Void) {
         let res = getCacheResult(domain)
         if (res != nil) {
             return callback(result: res)
         }
-        requsetRecord(domain, callback: { (res) -> Void in
-            callback(result: res)
+        DNSpod().requsetRecord(domain, callback: { (res) -> Void in
+            guard let res = self.DNS.requsetRecordSync(domain) else {
+                return callback(result: nil)
+            }
+            callback(result: self.setCache(domain, record: res))
         })
     }
     
@@ -41,95 +53,40 @@ public class HTTPDNS {
      
      - returns: DSN record
      */
-    public func getRecordSync(domain: String) -> DNSRecord! {
+    public func getRecordSync(domain: String) -> HTTPDNSResult! {
         guard let res = getCacheResult(domain) else {
-            return requsetRecordSync(domain)
+            guard let res = self.DNS.requsetRecordSync(domain) else {
+                return nil
+            }
+            return self.setCache(domain, record: res)
         }
         return res
     }
     
-    func setCache(domain: String, record: DNSRecord) {
-        let res = DNSRecord.init(ip: record.ip, ttl: record.ttl, ips: record.ips, timeout: record.timeout, cached: true)
-        self.cache.updateValue(res, forKey:domain)
+    /**
+     Clean all DNS record cahce
+     */
+    public func cleanCache() {
+        self.cache.removeAll()
     }
     
-    func getCacheResult(domain: String) -> DNSRecord! {
+    func setCache(domain: String, record: DNSRecord) -> HTTPDNSResult {
+        let timeout = Utils().getSecondTimestamp() + record.ttl
+        var res = HTTPDNSResult.init(ip: record.ip, ttl: record.ttl, ips: record.ips, timeout: timeout, cached: true)
+        self.cache.updateValue(res, forKey:domain)
+        res.cached = false
+        return res
+    }
+    
+    func getCacheResult(domain: String) -> HTTPDNSResult! {
         guard let res = self.cache[domain] else {
             return nil
         }
-        if (res.timeout <= getSecondTimestamp()){
+        if (res.timeout <= Utils().getSecondTimestamp()){
             self.cache.removeValueForKey(domain)
             return nil
         }
         return res
     }
-    
-    public func cleanCache() {
-        self.cache.removeAll()
-    }
-    
-    func getRequestString(domain: String) -> String {
-        return self.SERVER_ADDRESS + "d?dn=" + domain + "&ttl=1"
-    }
-    
-    func requsetRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
-        let urlString = getRequestString(domain)
-        guard let url = NSURL(string: urlString) else {
-            print("Error: cannot create URL")
-            return
-        }
-        
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
-            guard let responseData = data else {
-                print("Error: Didn't receive data")
-                return
-            }
-            guard error == nil else {
-                print("Error: Calling GET error on " + urlString)
-                print(error)
-                return
-            }
-            guard let res = self.parseResult(responseData) else {
-                return callback(result: nil)
-            }
-            self.setCache(domain, record: res)
-            callback(result: res)
-        }
-        task.resume()
-    }
-    
-    func requsetRecordSync(domain: String) -> DNSRecord! {
-        let urlString = getRequestString(domain)
-        guard let url = NSURL(string: urlString) else {
-            print("Error: Can't create URL")
-            return nil
-        }
-        guard let data = NSData.init(contentsOfURL: url) else {
-            print("Error: Did not receive data")
-            return nil
-        }
-        guard let res = self.parseResult(data) else {
-            print("Error: ParseResult error")
-            return nil
-        }
-        setCache(domain, record: res)
-        return res
-    }
-    
-    func getSecondTimestamp() -> Int {
-        return Int(NSDate().timeIntervalSince1970 * 1000)
-    }
-    
-    func parseResult (data: NSData) -> DNSRecord! {
-        let str = String(data: data, encoding: NSUTF8StringEncoding)
-        let strArray = str!.componentsSeparatedByString(",")
-        let ipStr = strArray[0] as String
-        let ipList = ipStr.componentsSeparatedByString(";") as Array<String>
-        guard let ttl = Int(strArray[1]) where (ipList.count > 0 && ttl > 0) else {
-            return nil
-        }
-        let timeout = getSecondTimestamp() + ttl
-        return DNSRecord.init(ip: ipList[0], ttl: ttl, ips: ipList, timeout: timeout, cached: false)
-    }
+
 }

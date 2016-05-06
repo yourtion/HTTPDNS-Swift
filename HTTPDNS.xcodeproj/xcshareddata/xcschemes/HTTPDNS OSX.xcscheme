@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CB5BBFAC1C4214E500564786"
+               BuildableName = "HTTPDNSTests OSX.xctest"
+               BlueprintName = "HTTPDNSTests OSX"
+               ReferencedContainer = "container:HTTPDNS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CB9C764F1C1D5451003502B6"
+            BuildableName = "HTTPDNS.framework"
+            BlueprintName = "HTTPDNS OSX"
+            ReferencedContainer = "container:HTTPDNS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

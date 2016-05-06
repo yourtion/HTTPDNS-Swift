@@ -7,11 +7,11 @@
 //
 
 import XCTest
-@testable import HTTPDNS
+import HTTPDNS
 
-class HTTPDNS_iOSTests: XCTestCase {
+class DNSPod_iOSTests: XCTestCase {
     
-    let HTTPDNS_CLASS = HTTPDNS()
+    let CLASS = DNSpod()
     let RES_Domain = "yourtion.com"
     let RES_String = "192.243.118.110;192.243.118.111;192.243.118.112,600"
     
@@ -26,12 +26,11 @@ class HTTPDNS_iOSTests: XCTestCase {
     }
     
     func testBasic() {
-        XCTAssertEqual(HTTPDNS_CLASS.SERVER_ADDRESS, "http://119.29.29.29/")
-        XCTAssertEqual(HTTPDNS_CLASS.cache.count, 0)
+        XCTAssertEqual(CLASS.SERVER_ADDRESS, "http://119.29.29.29/")
     }
     
     func testGetRequestString () {
-        let REQ_String = HTTPDNS_CLASS.getRequestString(RES_Domain)
+        let REQ_String = CLASS.getRequestString(RES_Domain)
         XCTAssertEqual(REQ_String, "http://119.29.29.29/d?dn=" + RES_Domain + "&ttl=1")
     }
     
@@ -39,14 +38,13 @@ class HTTPDNS_iOSTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let RES_Data = RES_String.dataUsingEncoding(NSUTF8StringEncoding)
-        let RES_Parsed = HTTPDNS_CLASS.parseResult(RES_Data!)
+        let RES_Parsed = CLASS.parseResult(RES_Data!)
         XCTAssertEqual(RES_Parsed.ip, "192.243.118.110")
         XCTAssertEqual(RES_Parsed.ips.count, 3)
         XCTAssertEqual(RES_Parsed.ips[0], "192.243.118.110")
         XCTAssertEqual(RES_Parsed.ips[1], "192.243.118.111")
         XCTAssertEqual(RES_Parsed.ips[2], "192.243.118.112")
         XCTAssertEqual(RES_Parsed.ttl, 600)
-        XCTAssertEqual(RES_Parsed.cached, false)
     }
     
 }
