@@ -10,10 +10,13 @@ import Foundation
 
 public struct HTTPDNSResult {
     public let ip : String
-    let ttl : Int
     public let ips : Array<String>
     let timeout : Int
     public var cached : Bool
+    
+    public var description : String {
+        return "ip: \(ip) \n ips: \(ips) \n cached: \(cached)"
+    }
 }
 
 public class HTTPDNS {
@@ -72,7 +75,7 @@ public class HTTPDNS {
     
     func setCache(domain: String, record: DNSRecord) -> HTTPDNSResult {
         let timeout = Utils().getSecondTimestamp() + record.ttl
-        var res = HTTPDNSResult.init(ip: record.ip, ttl: record.ttl, ips: record.ips, timeout: timeout, cached: true)
+        var res = HTTPDNSResult.init(ip: record.ip, ips: record.ips, timeout: timeout, cached: true)
         self.cache.updateValue(res, forKey:domain)
         res.cached = false
         return res
@@ -82,7 +85,7 @@ public class HTTPDNS {
         guard let res = self.cache[domain] else {
             return nil
         }
-        if (res.timeout <= Utils().getSecondTimestamp()){
+        if (res.timeout >= Utils().getSecondTimestamp()){
             self.cache.removeValueForKey(domain)
             return nil
         }
