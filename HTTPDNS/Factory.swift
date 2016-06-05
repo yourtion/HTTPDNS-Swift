@@ -85,7 +85,7 @@ class HTTPDNSFactory {
     func getDNSPod() -> HTTPDNSBase {
         return DNSpod()
     }
-    func getAliYun() -> HTTPDNSBase {
-        return AliYun(account:"100000")
+    func getAliYun(key:String! = "100000") -> HTTPDNSBase {
+        return AliYun(account:key)
     }
 }

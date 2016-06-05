@@ -19,19 +19,38 @@ public struct HTTPDNSResult {
     }
 }
 
+public enum Provider {
+    case DNSPod
+    case AliYun
+}
+
 public class HTTPDNS {
     
-    var cache = Dictionary<String,HTTPDNSResult>()
+    private init() {}
+    private var cache = Dictionary<String,HTTPDNSResult>()
+    private var DNS = HTTPDNSFactory().getAliYun()
     
     /// HTTPDNS sharedInstance
     public static let sharedInstance = HTTPDNS()
     
-    private init() {}
-    
-    let DNS = HTTPDNSFactory().getAliYun()
+    /**
+     Switch HTTPDNS provider
+     
+     - parameter provider: DNSPod or AliYun
+     - parameter key:      provider key
+     */
+    public func switchProvider (provider:Provider, key:String!) {
+        self.cleanCache()
+        switch provider {
+        case .DNSPod:
+            DNS = HTTPDNSFactory().getAliYun(key)
+        case .AliYun:
+            DNS = HTTPDNSFactory().getDNSPod()
+        }
+    }
     
     /**
-     Get DNS record asycn
+     Get DNS record async
      
      - parameter domain:   domain name
      - parameter callback: callback block with DNS record
