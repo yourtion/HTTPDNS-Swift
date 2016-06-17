@@ -12,78 +12,18 @@
 		CB1E7E651C0707910016890A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1E7E631C0707910016890A /* Main.storyboard */; };
 		CB1E7E671C0707910016890A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E7E661C0707910016890A /* Assets.xcassets */; };
 		CB1E7E6A1C0707910016890A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1E7E681C0707910016890A /* LaunchScreen.storyboard */; };
-		CB745C701CC8A0BA0023C4C2 /* HTTPDNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB745C691CC8A0AF0023C4C2 /* HTTPDNS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		CB745C741CC8A65F0023C4C2 /* HTTPDNS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB745C691CC8A0AF0023C4C2 /* HTTPDNS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBEF15331D11C56C0028B2B1 /* HTTPDNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBEF15321D11C56C0028B2B1 /* HTTPDNS.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CB745C681CC8A0AF0023C4C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB745C611CC8A0AF0023C4C2 /* HTTPDNS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CB9C76441C1D544A003502B6;
-			remoteInfo = "HTTPDNS iOS";
-		};
-		CB745C6A1CC8A0AF0023C4C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB745C611CC8A0AF0023C4C2 /* HTTPDNS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CB9C76581C1D5451003502B6;
-			remoteInfo = "HTTPDNS OSX";
-		};
-		CB745C6C1CC8A0AF0023C4C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB745C611CC8A0AF0023C4C2 /* HTTPDNS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CB5BBFA11C42149300564786;
-			remoteInfo = "HTTPDNSTests iOS";
-		};
-		CB745C6E1CC8A0AF0023C4C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB745C611CC8A0AF0023C4C2 /* HTTPDNS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CB5BBFB71C4214E500564786;
-			remoteInfo = "HTTPDNSTests OSX";
-		};
-		CB745C711CC8A1730023C4C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB745C611CC8A0AF0023C4C2 /* HTTPDNS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = CB9C76431C1D544A003502B6;
-			remoteInfo = "HTTPDNS iOS";
-		};
-		CB745C751CC8A65F0023C4C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CB745C611CC8A0AF0023C4C2 /* HTTPDNS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = CB9C76431C1D544A003502B6;
-			remoteInfo = "HTTPDNS iOS";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		CB745C771CC8A65F0023C4C2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CB745C741CC8A65F0023C4C2 /* HTTPDNS.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		CB1E7E5C1C0707910016890A /* HTTPDNS-SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HTTPDNS-SwiftDemo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1E7E5C1C0707910016890A /* iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1E7E5F1C0707910016890A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB1E7E611C0707910016890A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CB1E7E641C0707910016890A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB1E7E661C0707910016890A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1E7E691C0707910016890A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB1E7E6B1C0707910016890A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB745C611CC8A0AF0023C4C2 /* HTTPDNS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = HTTPDNS.xcodeproj; sourceTree = "<group>"; };
+		CBEF15321D11C56C0028B2B1 /* HTTPDNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HTTPDNS.framework; path = "../build/Debug-iphoneos/HTTPDNS.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB745C701CC8A0BA0023C4C2 /* HTTPDNS.framework in Frameworks */,
+				CBEF15331D11C56C0028B2B1 /* HTTPDNS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +41,7 @@
 		CB1E7E531C0707910016890A = {
 			isa = PBXGroup;
 			children = (
-				CB745C611CC8A0AF0023C4C2 /* HTTPDNS.xcodeproj */,
+				CBEF15321D11C56C0028B2B1 /* HTTPDNS.framework */,
 				CB1E7E5E1C0707910016890A /* HTTPDNS-SwiftDemo */,
 				CB1E7E5D1C0707910016890A /* Products */,
 			);
@@ -110,7 +50,7 @@
 		CB1E7E5D1C0707910016890A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB1E7E5C1C0707910016890A /* HTTPDNS-SwiftDemo.app */,
+				CB1E7E5C1C0707910016890A /* iOSDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,38 +68,24 @@
 			path = "HTTPDNS-SwiftDemo";
 			sourceTree = "<group>";
 		};
-		CB745C621CC8A0AF0023C4C2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CB745C691CC8A0AF0023C4C2 /* HTTPDNS.framework */,
-				CB745C6B1CC8A0AF0023C4C2 /* HTTPDNS.framework */,
-				CB745C6D1CC8A0AF0023C4C2 /* HTTPDNSTests iOS.xctest */,
-				CB745C6F1CC8A0AF0023C4C2 /* HTTPDNSTests OSX.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB1E7E5B1C0707910016890A /* HTTPDNS-SwiftDemo */ = {
+		CB1E7E5B1C0707910016890A /* iOSDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB1E7E6E1C0707910016890A /* Build configuration list for PBXNativeTarget "HTTPDNS-SwiftDemo" */;
+			buildConfigurationList = CB1E7E6E1C0707910016890A /* Build configuration list for PBXNativeTarget "iOSDemo" */;
 			buildPhases = (
 				CB1E7E581C0707910016890A /* Sources */,
 				CB1E7E591C0707910016890A /* Frameworks */,
 				CB1E7E5A1C0707910016890A /* Resources */,
-				CB745C771CC8A65F0023C4C2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CB745C721CC8A1730023C4C2 /* PBXTargetDependency */,
-				CB745C761CC8A65F0023C4C2 /* PBXTargetDependency */,
 			);
-			name = "HTTPDNS-SwiftDemo";
+			name = iOSDemo;
 			productName = "HTTPDNS-SwiftDemo";
-			productReference = CB1E7E5C1C0707910016890A /* HTTPDNS-SwiftDemo.app */;
+			productReference = CB1E7E5C1C0707910016890A /* iOSDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -177,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CB1E7E571C0707910016890A /* Build configuration list for PBXProject "HTTPDNS-SwiftDemo" */;
+			buildConfigurationList = CB1E7E571C0707910016890A /* Build configuration list for PBXProject "iOSDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -188,49 +114,12 @@
 			mainGroup = CB1E7E531C0707910016890A;
 			productRefGroup = CB1E7E5D1C0707910016890A /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CB745C621CC8A0AF0023C4C2 /* Products */;
-					ProjectRef = CB745C611CC8A0AF0023C4C2 /* HTTPDNS.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				CB1E7E5B1C0707910016890A /* HTTPDNS-SwiftDemo */,
+				CB1E7E5B1C0707910016890A /* iOSDemo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CB745C691CC8A0AF0023C4C2 /* HTTPDNS.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = HTTPDNS.framework;
-			remoteRef = CB745C681CC8A0AF0023C4C2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CB745C6B1CC8A0AF0023C4C2 /* HTTPDNS.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = HTTPDNS.framework;
-			remoteRef = CB745C6A1CC8A0AF0023C4C2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CB745C6D1CC8A0AF0023C4C2 /* HTTPDNSTests iOS.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "HTTPDNSTests iOS.xctest";
-			remoteRef = CB745C6C1CC8A0AF0023C4C2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CB745C6F1CC8A0AF0023C4C2 /* HTTPDNSTests OSX.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "HTTPDNSTests OSX.xctest";
-			remoteRef = CB745C6E1CC8A0AF0023C4C2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CB1E7E5A1C0707910016890A /* Resources */ = {
@@ -256,19 +145,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CB745C721CC8A1730023C4C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "HTTPDNS iOS";
-			targetProxy = CB745C711CC8A1730023C4C2 /* PBXContainerItemProxy */;
-		};
-		CB745C761CC8A65F0023C4C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "HTTPDNS iOS";
-			targetProxy = CB745C751CC8A65F0023C4C2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CB1E7E631C0707910016890A /* Main.storyboard */ = {
@@ -375,12 +251,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "HTTPDNS-SwiftDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourtion.HTTPDNS-SwiftDemo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.iOSDemo;
+				PRODUCT_NAME = iOSDemo;
 			};
 			name = Debug;
 		};
@@ -388,19 +263,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "HTTPDNS-SwiftDemo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yourtion.HTTPDNS-SwiftDemo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.iOSDemo;
+				PRODUCT_NAME = iOSDemo;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB1E7E571C0707910016890A /* Build configuration list for PBXProject "HTTPDNS-SwiftDemo" */ = {
+		CB1E7E571C0707910016890A /* Build configuration list for PBXProject "iOSDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB1E7E6C1C0707910016890A /* Debug */,
@@ -409,7 +283,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB1E7E6E1C0707910016890A /* Build configuration list for PBXNativeTarget "HTTPDNS-SwiftDemo" */ = {
+		CB1E7E6E1C0707910016890A /* Build configuration list for PBXNativeTarget "iOSDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB1E7E6F1C0707910016890A /* Debug */,

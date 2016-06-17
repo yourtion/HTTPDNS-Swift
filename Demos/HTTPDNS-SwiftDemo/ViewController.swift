@@ -11,6 +11,8 @@ import HTTPDNS
 
 class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDelegate {
     
+    @IBOutlet weak var resultText: UITextView!
+    @IBOutlet weak var urlField: UITextField!
     var data = NSMutableData()
     var host = ""
     
@@ -30,6 +32,48 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
         
         print("Sync baidu.com cached", HTTPDNS.sharedInstance.getRecordSync("www.baidu.com"))
         
+    }
+    
+    @IBAction func getSync(sender: AnyObject) {
+        guard let domain = urlField.text else {
+            return resultText.text = "Domain Error."
+        }
+        let result = HTTPDNS.sharedInstance.getRecordSync(domain)
+        if (result != nil) {
+            return resultText.text = "Domain: \(domain) \n\n \(result.description)"
+        }
+        resultText.text = "Request Domain Error."
+    }
+
+    @IBAction func getAsync(sender: AnyObject) {
+        guard let domain = urlField.text else {
+            return resultText.text = "Domain Error."
+        }
+        HTTPDNS.sharedInstance.getRecord(domain, callback: { (result) in
+            dispatch_async(dispatch_get_main_queue(),{
+                if (result != nil) {
+                    return self.resultText.text = "Domain: \(domain) \n\n \(result.description)"
+                }
+                self.resultText.text = "Request Domain Error."
+            })
+        })
+    }
+    
+    @IBAction func cleanCache(sender: AnyObject) {
+        HTTPDNS.sharedInstance.cleanCache()
+    }
+    
+    func request(urlString: String, callback: (result:String!) -> Void) {
+        guard let url = NSURL(string: urlString) else {
+           return callback(result: nil)
+        }
+        if(urlString.containsString("https://")) {
+            requestHTTPS(url)
+        } else if (urlString.containsString("https://")){
+            requestHTTP(url)
+        } else {
+            callback(result: nil)
+        }
     }
     
     func requestHTTPS(url:NSURL!) {
