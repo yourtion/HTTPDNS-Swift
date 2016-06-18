@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  HTTPDNS-SwiftDemo
+//  iOSDemo
 //
-//  Created by YourtionGuo on 11/26/15.
-//  Copyright © 2015 Yourtion. All rights reserved.
+//  Created by YourtionGuo on 6/18/16.
+//  Copyright © 2016 Yourtion. All rights reserved.
 //
 
 import UIKit
@@ -44,7 +44,7 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
         }
         resultText.text = "Request Domain Error."
     }
-
+    
     @IBAction func getAsync(sender: AnyObject) {
         guard let domain = urlField.text else {
             return resultText.text = "Domain Error."
@@ -65,7 +65,7 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
     
     func request(urlString: String, callback: (result:String!) -> Void) {
         guard let url = NSURL(string: urlString) else {
-           return callback(result: nil)
+            return callback(result: nil)
         }
         if(urlString.containsString("https://")) {
             requestHTTPS(url)
@@ -117,32 +117,32 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
     
     func evaluateServerTrust(serverTrust:SecTrustRef!, domain:String!) -> Bool{
         /*
-        * 创建证书校验策略
-        */
+         * 创建证书校验策略
+         */
         let policies = NSMutableArray()
         if (domain != nil) {
             policies.addObject(SecPolicyCreateSSL(true, domain))
         } else {
             policies.addObject(SecPolicyCreateBasicX509())
         }
-    
+        
         /*
-        * 绑定校验策略到服务端的证书上
-        */
+         * 绑定校验策略到服务端的证书上
+         */
         SecTrustSetPolicies(serverTrust,policies)
-    
+        
         /*
-        * 评估当前serverTrust是否可信任，
-        * 官方建议在result = kSecTrustResultUnspecified 或 kSecTrustResultProceed
-        * 的情况下serverTrust可以被验证通过，https://developer.apple.com/library/ios/technotes/tn2232/_index.html
-        * 关于SecTrustResultType的详细信息请参考SecTrust.h
-        */
+         * 评估当前serverTrust是否可信任，
+         * 官方建议在result = kSecTrustResultUnspecified 或 kSecTrustResultProceed
+         * 的情况下serverTrust可以被验证通过，https://developer.apple.com/library/ios/technotes/tn2232/_index.html
+         * 关于SecTrustResultType的详细信息请参考SecTrust.h
+         */
         var result = SecTrustResultType()
         SecTrustEvaluate(serverTrust, &result);
         
         return result == UInt32(kSecTrustResultUnspecified) || result == UInt32(kSecTrustResultProceed)
     }
-
+    
     
     func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
         
@@ -174,12 +174,10 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
     func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData){
         self.data.appendData(data)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
-

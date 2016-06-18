@@ -5,6 +5,6 @@
       location = "group:HTTPDNS.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Demos/HTTPDNS-SwiftDemo.xcodeproj">
+      location = "group:Demos/iOSDemo/iOSDemo.xcodeproj">
    </FileRef>
 </Workspace>

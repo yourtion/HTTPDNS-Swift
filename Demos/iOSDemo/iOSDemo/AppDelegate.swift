@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  HTTPDNS-SwiftDemo
+//  iOSDemo
 //
-//  Created by YourtionGuo on 11/26/15.
-//  Copyright © 2015 Yourtion. All rights reserved.
+//  Created by YourtionGuo on 6/18/16.
+//  Copyright © 2016 Yourtion. All rights reserved.
 //
 
 import UIKit
