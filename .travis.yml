@@ -6,10 +6,7 @@ before_install:
 
 env:
   matrix:
-    - SCHEME=HTTPDNS_iOS TEST_SDK=iphonesimulator8.0
-    - SCHEME=HTTPDNS_iOS TEST_SDK=iphonesimulator9.0
     - SCHEME=HTTPDNS_iOS TEST_SDK=iphonesimulator
-    - SCHEME=HTTPDNS_OSX TEST_SDK=macosx10.10
     - SCHEME=HTTPDNS_OSX TEST_SDK=macosx
 
 script:
