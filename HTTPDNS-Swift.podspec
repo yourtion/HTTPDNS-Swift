@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
-  s.name         = "HTTPDNS"
-  s.version      = "0.1.0"
-  s.summary      = "Use HTTP to resolve domain"
+  s.name         = "HTTPDNS-Swift"
+  s.version      = "0.4.0"
+  s.summary      = "Use HTTP to resolve domain (Swift)"
 
   s.description  = <<-DESC
-                   HttpDNS 库 Swift 实现（使用DNSPod）
+                   HttpDNS 库 Swift 实现（使用DNSPod、AliYunDNS）
                    DESC
 
   s.homepage     = "https://github.com/yourtion/HTTPDNS-Swift"
