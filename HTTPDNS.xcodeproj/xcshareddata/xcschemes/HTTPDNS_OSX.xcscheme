@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB9C76431C1D544A003502B6"
+               BlueprintIdentifier = "CB9C764F1C1D5451003502B6"
                BuildableName = "HTTPDNS.framework"
-               BlueprintName = "HTTPDNS iOS"
+               BlueprintName = "HTTPDNS_OSX"
                ReferencedContainer = "container:HTTPDNS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CB419F571CC8E57700EF1886"
-               BuildableName = "HTTPDNSTests iOS.xctest"
-               BlueprintName = "HTTPDNSTests iOS"
+               BlueprintIdentifier = "CB5BBFAC1C4214E500564786"
+               BuildableName = "HTTPDNSTests_OSX.xctest"
+               BlueprintName = "HTTPDNSTests_OSX"
                ReferencedContainer = "container:HTTPDNS.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB9C76431C1D544A003502B6"
+            BlueprintIdentifier = "CB9C764F1C1D5451003502B6"
             BuildableName = "HTTPDNS.framework"
-            BlueprintName = "HTTPDNS iOS"
+            BlueprintName = "HTTPDNS_OSX"
             ReferencedContainer = "container:HTTPDNS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,9 +64,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB9C76431C1D544A003502B6"
+            BlueprintIdentifier = "CB9C764F1C1D5451003502B6"
             BuildableName = "HTTPDNS.framework"
-            BlueprintName = "HTTPDNS iOS"
+            BlueprintName = "HTTPDNS_OSX"
             ReferencedContainer = "container:HTTPDNS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -82,9 +82,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CB9C76431C1D544A003502B6"
+            BlueprintIdentifier = "CB9C764F1C1D5451003502B6"
             BuildableName = "HTTPDNS.framework"
-            BlueprintName = "HTTPDNS iOS"
+            BlueprintName = "HTTPDNS_OSX"
             ReferencedContainer = "container:HTTPDNS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

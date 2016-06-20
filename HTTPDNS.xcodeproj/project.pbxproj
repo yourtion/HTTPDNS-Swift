@@ -35,11 +35,28 @@
 		CB9C76721C1D5567003502B6 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CB759AC01D17A1D800095367 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB9C763B1C1D544A003502B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB9C764F1C1D5451003502B6;
+			remoteInfo = HTTPDNS_OSX;
+		};
+		CB759AC21D17A1DB00095367 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB9C763B1C1D544A003502B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB9C76431C1D544A003502B6;
+			remoteInfo = HTTPDNS_iOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		CB419F661CC8E57700EF1886 /* HTTPDNSTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HTTPDNSTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB419F661CC8E57700EF1886 /* HTTPDNSTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTTPDNSTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5BBFA31C42149300564786 /* DSNPodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNPodTests.swift; sourceTree = "<group>"; };
 		CB5BBFA51C42149300564786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB5BBFB71C4214E500564786 /* HTTPDNSTests OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HTTPDNSTests OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB5BBFB71C4214E500564786 /* HTTPDNSTests_OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTTPDNSTests_OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB745C791CC8AB390023C4C2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSPod.swift; sourceTree = "<group>"; };
 		CB745C841CC8B7FB0023C4C2 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
@@ -108,8 +125,8 @@
 			children = (
 				CB9C76441C1D544A003502B6 /* HTTPDNS.framework */,
 				CB9C76581C1D5451003502B6 /* HTTPDNS.framework */,
-				CB5BBFB71C4214E500564786 /* HTTPDNSTests OSX.xctest */,
-				CB419F661CC8E57700EF1886 /* HTTPDNSTests iOS.xctest */,
+				CB5BBFB71C4214E500564786 /* HTTPDNSTests_OSX.xctest */,
+				CB419F661CC8E57700EF1886 /* HTTPDNSTests_iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,9 +167,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CB419F571CC8E57700EF1886 /* HTTPDNSTests iOS */ = {
+		CB419F571CC8E57700EF1886 /* HTTPDNSTests_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB419F631CC8E57700EF1886 /* Build configuration list for PBXNativeTarget "HTTPDNSTests iOS" */;
+			buildConfigurationList = CB419F631CC8E57700EF1886 /* Build configuration list for PBXNativeTarget "HTTPDNSTests_iOS" */;
 			buildPhases = (
 				CB419F5A1CC8E57700EF1886 /* Sources */,
 				CB419F601CC8E57700EF1886 /* Frameworks */,
@@ -161,15 +178,16 @@
 			buildRules = (
 			);
 			dependencies = (
+				CB759AC31D17A1DB00095367 /* PBXTargetDependency */,
 			);
-			name = "HTTPDNSTests iOS";
+			name = HTTPDNSTests_iOS;
 			productName = HTTPDNSTests;
-			productReference = CB419F661CC8E57700EF1886 /* HTTPDNSTests iOS.xctest */;
+			productReference = CB419F661CC8E57700EF1886 /* HTTPDNSTests_iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CB5BBFAC1C4214E500564786 /* HTTPDNSTests OSX */ = {
+		CB5BBFAC1C4214E500564786 /* HTTPDNSTests_OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB5BBFB41C4214E500564786 /* Build configuration list for PBXNativeTarget "HTTPDNSTests OSX" */;
+			buildConfigurationList = CB5BBFB41C4214E500564786 /* Build configuration list for PBXNativeTarget "HTTPDNSTests_OSX" */;
 			buildPhases = (
 				CB5BBFAF1C4214E500564786 /* Sources */,
 				CB5BBFB11C4214E500564786 /* Frameworks */,
@@ -178,15 +196,16 @@
 			buildRules = (
 			);
 			dependencies = (
+				CB759AC11D17A1D800095367 /* PBXTargetDependency */,
 			);
-			name = "HTTPDNSTests OSX";
+			name = HTTPDNSTests_OSX;
 			productName = HTTPDNSTests;
-			productReference = CB5BBFB71C4214E500564786 /* HTTPDNSTests OSX.xctest */;
+			productReference = CB5BBFB71C4214E500564786 /* HTTPDNSTests_OSX.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CB9C76431C1D544A003502B6 /* HTTPDNS iOS */ = {
+		CB9C76431C1D544A003502B6 /* HTTPDNS_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB9C764C1C1D544A003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS iOS" */;
+			buildConfigurationList = CB9C764C1C1D544A003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS_iOS" */;
 			buildPhases = (
 				CB9C763F1C1D544A003502B6 /* Sources */,
 				CB9C76401C1D544A003502B6 /* Frameworks */,
@@ -197,14 +216,14 @@
 			);
 			dependencies = (
 			);
-			name = "HTTPDNS iOS";
+			name = HTTPDNS_iOS;
 			productName = HTTPDNS;
 			productReference = CB9C76441C1D544A003502B6 /* HTTPDNS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CB9C764F1C1D5451003502B6 /* HTTPDNS OSX */ = {
+		CB9C764F1C1D5451003502B6 /* HTTPDNS_OSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB9C76551C1D5451003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS OSX" */;
+			buildConfigurationList = CB9C76551C1D5451003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS_OSX" */;
 			buildPhases = (
 				CB9C76501C1D5451003502B6 /* Sources */,
 				CB9C76511C1D5451003502B6 /* Frameworks */,
@@ -215,7 +234,7 @@
 			);
 			dependencies = (
 			);
-			name = "HTTPDNS OSX";
+			name = HTTPDNS_OSX;
 			productName = HTTPDNS;
 			productReference = CB9C76581C1D5451003502B6 /* HTTPDNS.framework */;
 			productType = "com.apple.product-type.framework";
@@ -247,10 +266,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB9C76431C1D544A003502B6 /* HTTPDNS iOS */,
-				CB9C764F1C1D5451003502B6 /* HTTPDNS OSX */,
-				CB5BBFAC1C4214E500564786 /* HTTPDNSTests OSX */,
-				CB419F571CC8E57700EF1886 /* HTTPDNSTests iOS */,
+				CB9C76431C1D544A003502B6 /* HTTPDNS_iOS */,
+				CB9C764F1C1D5451003502B6 /* HTTPDNS_OSX */,
+				CB5BBFAC1C4214E500564786 /* HTTPDNSTests_OSX */,
+				CB419F571CC8E57700EF1886 /* HTTPDNSTests_iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -340,6 +359,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB759AC11D17A1D800095367 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB9C764F1C1D5451003502B6 /* HTTPDNS_OSX */;
+			targetProxy = CB759AC01D17A1D800095367 /* PBXContainerItemProxy */;
+		};
+		CB759AC31D17A1DB00095367 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB9C76431C1D544A003502B6 /* HTTPDNS_iOS */;
+			targetProxy = CB759AC21D17A1DB00095367 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CB419F641CC8E57700EF1886 /* Debug */ = {
@@ -436,6 +468,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -478,6 +511,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -497,6 +531,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNS;
 				PRODUCT_NAME = HTTPDNS;
 				SKIP_INSTALL = YES;
@@ -516,6 +551,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNS;
 				PRODUCT_NAME = HTTPDNS;
 				SKIP_INSTALL = YES;
@@ -564,7 +600,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB419F631CC8E57700EF1886 /* Build configuration list for PBXNativeTarget "HTTPDNSTests iOS" */ = {
+		CB419F631CC8E57700EF1886 /* Build configuration list for PBXNativeTarget "HTTPDNSTests_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB419F641CC8E57700EF1886 /* Debug */,
@@ -573,7 +609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB5BBFB41C4214E500564786 /* Build configuration list for PBXNativeTarget "HTTPDNSTests OSX" */ = {
+		CB5BBFB41C4214E500564786 /* Build configuration list for PBXNativeTarget "HTTPDNSTests_OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB5BBFB51C4214E500564786 /* Debug */,
@@ -591,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB9C764C1C1D544A003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS iOS" */ = {
+		CB9C764C1C1D544A003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB9C764D1C1D544A003502B6 /* Debug */,
@@ -600,7 +636,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB9C76551C1D5451003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS OSX" */ = {
+		CB9C76551C1D5451003502B6 /* Build configuration list for PBXNativeTarget "HTTPDNS_OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB9C76561C1D5451003502B6 /* Debug */,

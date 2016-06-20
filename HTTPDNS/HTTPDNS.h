@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double HTTPDNSVersionNumber;
 FOUNDATION_EXPORT const unsigned char HTTPDNSVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <HTTPDNS/PublicHeader.h>
-
-
