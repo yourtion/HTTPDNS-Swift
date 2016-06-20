@@ -13,4 +13,4 @@ env:
     - SCHEME=HTTPDNS_OSX TEST_SDK=macosx
 
 script:
-  - xctool test -test-sdk $TEST_SDK -simulator $SIMULATOR
+  xctool -scheme $SCHEME -sdk $TEST_SDK test
