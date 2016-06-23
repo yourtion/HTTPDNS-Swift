@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HTTPDNS-Swift"
-  s.version      = "0.4.1"
+  s.version      = "0.4.2"
   s.summary      = "Use HTTP to resolve domain (Swift)"
 
   s.description  = <<-DESC
@@ -11,11 +11,11 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/yourtion/HTTPDNS-Swift"
   s.license      = "MIT"
   s.author       = { "Yourtion" => "yourtion@gmail.com" }
-  s.source       = { :git => "https://github.com/yourtion/HTTPDNS-Swift.git", :tag => s.version  }
+  s.source       = { :git => "https://github.com/yourtion/HTTPDNS-Swift.git", :tag => s.version }
   s.source_files  = "HTTPDNS/*.swift"
   
   s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.9'
+  s.osx.deployment_target = '10.10'
   
   s.frameworks  = "Foundation"
   s.requires_arc = true

@@ -8,22 +8,33 @@
 
 import Foundation
 
+/**
+ *  HTTPDNS Result
+ */
 public struct HTTPDNSResult {
-    public let ip : String
-    public let ips : Array<String>
-    let timeout : Int
-    public var cached : Bool
+    public let ip : String /// IP address
+    public let ips : Array<String> /// IP array
+    let timeout : Int /// Timeout
+    public var cached : Bool /// is Cached
     
+    /// Description
     public var description : String {
         return "ip: \(ip) \n ips: \(ips) \n cached: \(cached)"
     }
 }
 
+/**
+ HTTPDNS Provider
+ 
+ - DNSPod: [DNSPod](https://www.dnspod.cn/httpdns)
+ - AliYun: [AliYun](https://help.aliyun.com/product/9173596_30100.html)
+ */
 public enum Provider {
     case DNSPod
     case AliYun
 }
 
+/// HTTPDNS Client
 public class HTTPDNS {
     
     private init() {}

@@ -24,6 +24,9 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
             print("Async QQ.com", result)
         })
         
+        HTTPDNS.sharedInstance.switchProvider(.DNSPod, key: nil)
+        HTTPDNS.sharedInstance.cleanCache()
+        
         print("Sync baidu.com", HTTPDNS.sharedInstance.getRecordSync("www.baidu.com"))
         
         requestHTTPS(NSURL(string: "https://api.github.com/users/octocat/orgs")!)
