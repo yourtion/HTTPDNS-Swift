@@ -14,12 +14,6 @@ struct DNSRecord {
     let ips : Array<String>
 }
 
-enum CompassPoint {
-    case DNSPod
-    case DNSPodPro
-    case AliYun
-}
-
 protocol HTTPDNSBaseProtocol {
     func parseResult (data: NSData) -> DNSRecord!
     func getRequestString(domain: String) -> String
