@@ -12,10 +12,14 @@ import Foundation
  *  HTTPDNS Result
  */
 public struct HTTPDNSResult {
-    public let ip : String // IP address
-    public let ips : Array<String> // IP array
-    let timeout : Int // Timeout
-    public var cached : Bool // is Cached
+    /// IP address
+    public let ip : String
+    /// IP array
+    public let ips : Array<String>
+    /// Timeout
+    let timeout : Int
+    /// is Cached
+    public var cached : Bool
     
     /// Description
     public var description : String {
@@ -30,8 +34,10 @@ public struct HTTPDNSResult {
  - AliYun: [AliYun](https://help.aliyun.com/product/9173596_30100.html)
  */
 public enum Provider {
-    case DNSPod // DNSPod
-    case AliYun // AliYun
+    /// DNSPod
+    case DNSPod
+    /// AliYun
+    case AliYun
 }
 
 /// HTTPDNS Client
