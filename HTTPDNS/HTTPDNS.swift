@@ -54,9 +54,11 @@ public class HTTPDNS {
         self.cleanCache()
         switch provider {
         case .DNSPod:
-            DNS = HTTPDNSFactory().getAliYun(key)
-        case .AliYun:
             DNS = HTTPDNSFactory().getDNSPod()
+            break
+        case .AliYun:
+            DNS = HTTPDNSFactory().getAliYun(key)
+            break
         }
     }
     
