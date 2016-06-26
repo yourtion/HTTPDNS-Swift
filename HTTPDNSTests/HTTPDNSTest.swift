@@ -14,6 +14,7 @@ class HTTPDNSTest: XCTestCase {
     let client = HTTPDNS.sharedInstance
     let domain = "www.taobao.com"
     
+    let timeout : NSTimeInterval = 30
     
     override func setUp() {
         super.setUp()
@@ -75,44 +76,60 @@ class HTTPDNSTest: XCTestCase {
         client.switchProvider(Provider.DNSPod, key: nil)
         
         let exp1 = self.expectationWithDescription("Handler called")
+        var run1 = false
+        
         client.getRecord(domain) { (rec1) in
             XCTAssertNotNil(rec1)
             XCTAssertNotNil(rec1.ip)
             XCTAssertEqual(rec1.cached, false)
+            run1 = true
             exp1.fulfill()
         }
-        self.waitForExpectationsWithTimeout(10, handler: nil)
+        self.waitForExpectationsWithTimeout(timeout, handler: nil)
+        XCTAssertTrue(run1)
         
         let exp2 = self.expectationWithDescription("Handler called")
+        var run2 = false
+
         client.getRecord(domain) { (rec1) in
             XCTAssertNotNil(rec1)
             XCTAssertNotNil(rec1.ip)
             XCTAssertEqual(rec1.cached, true)
+            run2 = true
             exp2.fulfill()
         }
-        self.waitForExpectationsWithTimeout(10, handler: nil)
+        self.waitForExpectationsWithTimeout(timeout, handler: nil)
+        XCTAssertTrue(run2)
     }
     
     func testAliYun() {
         client.switchProvider(Provider.AliYun, key: "100000")
         
         let exp1 = self.expectationWithDescription("Handler called")
+        var run1 = false
+
         client.getRecord(domain) { (rec1) in
             XCTAssertNotNil(rec1)
             XCTAssertNotNil(rec1.ip)
             XCTAssertEqual(rec1.cached, false)
+            run1 = true
             exp1.fulfill()
         }
-        self.waitForExpectationsWithTimeout(10, handler: nil)
+        self.waitForExpectationsWithTimeout(timeout, handler: nil)
+        XCTAssertTrue(run1)
         
         let exp2 = self.expectationWithDescription("Handler called")
+        var run2 = false
+
         client.getRecord(domain) { (rec1) in
             XCTAssertNotNil(rec1)
             XCTAssertNotNil(rec1.ip)
             XCTAssertEqual(rec1.cached, true)
+            run2 = true
             exp2.fulfill()
         }
-        self.waitForExpectationsWithTimeout(10, handler: nil)
+        self.waitForExpectationsWithTimeout(timeout, handler: nil)
+        XCTAssertTrue(run2)
     }
     
 }
