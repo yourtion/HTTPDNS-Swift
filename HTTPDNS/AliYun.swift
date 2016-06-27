@@ -24,7 +24,7 @@ class AliYun : HTTPDNSBase {
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data,options:NSJSONReadingOptions.AllowFragments) as! NSDictionary
             let ipList = json.objectForKey("ips") as! Array<String>
-            guard let ttl = json.objectForKey("ttl") as? Int where (ipList.count > 0 && ttl > 0) else {
+            guard let ttl = json.objectForKey("ttl") as? NSTimeInterval where (ipList.count > 0 && ttl > 0) else {
                 return nil
             }
             return DNSRecord.init(ip: ipList[0], ttl: ttl, ips: ipList)

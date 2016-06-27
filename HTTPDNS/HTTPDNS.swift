@@ -17,7 +17,7 @@ public struct HTTPDNSResult {
     /// IP array
     public let ips : Array<String>
     /// Timeout
-    let timeout : Int
+    let timeout : NSTimeInterval
     /// is Cached
     public var cached : Bool
     

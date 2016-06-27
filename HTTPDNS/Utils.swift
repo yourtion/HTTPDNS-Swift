@@ -9,7 +9,7 @@
 import Foundation
 
 class Utils {
-    func getSecondTimestamp() -> Int {
-        return Int(NSDate().timeIntervalSince1970 * 1000)
+    func getSecondTimestamp() -> NSTimeInterval {
+        return NSTimeInterval(NSDate().timeIntervalSince1970 * 1000)
     }
 }
