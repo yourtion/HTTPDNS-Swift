@@ -13,18 +13,14 @@
 		CB419F711CC8E8A800EF1886 /* AliYunTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C8F1CC8CEAB0023C4C2 /* AliYunTest.swift */; };
 		CB419F721CC8E8B700EF1886 /* DSNPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BBFA31C42149300564786 /* DSNPodTests.swift */; };
 		CB419F731CC8E8B700EF1886 /* AliYunTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C8F1CC8CEAB0023C4C2 /* AliYunTest.swift */; };
-		CB419F741CC8E8CF00EF1886 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C791CC8AB390023C4C2 /* Utils.swift */; };
 		CB419F751CC8E8CF00EF1886 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
 		CB419F761CC8E8CF00EF1886 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C841CC8B7FB0023C4C2 /* Factory.swift */; };
 		CB419F771CC8E8CF00EF1886 /* DNSPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */; };
 		CB419F781CC8E8CF00EF1886 /* AliYun.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C891CC8BCF00023C4C2 /* AliYun.swift */; };
-		CB419F791CC8E8DA00EF1886 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C791CC8AB390023C4C2 /* Utils.swift */; };
 		CB419F7A1CC8E8DA00EF1886 /* HTTPDNS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C76701C1D5567003502B6 /* HTTPDNS.swift */; };
 		CB419F7B1CC8E8DA00EF1886 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C841CC8B7FB0023C4C2 /* Factory.swift */; };
 		CB419F7C1CC8E8DA00EF1886 /* DNSPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */; };
 		CB419F7D1CC8E8DA00EF1886 /* AliYun.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C891CC8BCF00023C4C2 /* AliYun.swift */; };
-		CB745C7A1CC8AB390023C4C2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C791CC8AB390023C4C2 /* Utils.swift */; };
-		CB745C7B1CC8AB390023C4C2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C791CC8AB390023C4C2 /* Utils.swift */; };
 		CB745C801CC8AC790023C4C2 /* DNSPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */; };
 		CB745C811CC8AC790023C4C2 /* DNSPod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */; };
 		CB745C851CC8B7FB0023C4C2 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB745C841CC8B7FB0023C4C2 /* Factory.swift */; };
@@ -60,7 +56,6 @@
 		CB5BBFA31C42149300564786 /* DSNPodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNPodTests.swift; sourceTree = "<group>"; };
 		CB5BBFA51C42149300564786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB5BBFB71C4214E500564786 /* HTTPDNSTests_OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTTPDNSTests_OSX.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB745C791CC8AB390023C4C2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNSPod.swift; sourceTree = "<group>"; };
 		CB745C841CC8B7FB0023C4C2 /* Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		CB745C891CC8BCF00023C4C2 /* AliYun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AliYun.swift; sourceTree = "<group>"; };
@@ -141,7 +136,6 @@
 				CB9C76491C1D544A003502B6 /* Info.plist */,
 				CB9C76471C1D544A003502B6 /* HTTPDNS.h */,
 				CB9C76701C1D5567003502B6 /* HTTPDNS.swift */,
-				CB745C791CC8AB390023C4C2 /* Utils.swift */,
 				CB745C841CC8B7FB0023C4C2 /* Factory.swift */,
 				CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */,
 				CB745C891CC8BCF00023C4C2 /* AliYun.swift */,
@@ -314,7 +308,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB419F791CC8E8DA00EF1886 /* Utils.swift in Sources */,
 				CB37BAE61D1D16CA0028C780 /* HTTPDNSTest.swift in Sources */,
 				CB419F7A1CC8E8DA00EF1886 /* HTTPDNS.swift in Sources */,
 				CB419F7B1CC8E8DA00EF1886 /* Factory.swift in Sources */,
@@ -329,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB419F741CC8E8CF00EF1886 /* Utils.swift in Sources */,
 				CB37BAE51D1D16CA0028C780 /* HTTPDNSTest.swift in Sources */,
 				CB419F751CC8E8CF00EF1886 /* HTTPDNS.swift in Sources */,
 				CB419F761CC8E8CF00EF1886 /* Factory.swift in Sources */,
@@ -347,7 +339,6 @@
 				CB745C851CC8B7FB0023C4C2 /* Factory.swift in Sources */,
 				CB745C8A1CC8BCF00023C4C2 /* AliYun.swift in Sources */,
 				CB9C76711C1D5567003502B6 /* HTTPDNS.swift in Sources */,
-				CB745C7A1CC8AB390023C4C2 /* Utils.swift in Sources */,
 				CB745C801CC8AC790023C4C2 /* DNSPod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,7 +350,6 @@
 				CB745C861CC8B7FB0023C4C2 /* Factory.swift in Sources */,
 				CB745C8B1CC8BCF00023C4C2 /* AliYun.swift in Sources */,
 				CB9C76721C1D5567003502B6 /* HTTPDNS.swift in Sources */,
-				CB745C7B1CC8AB390023C4C2 /* Utils.swift in Sources */,
 				CB745C811CC8AC790023C4C2 /* DNSPod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

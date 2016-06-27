@@ -10,7 +10,7 @@ import Foundation
 
 struct DNSRecord {
     let ip : String
-    let ttl : NSTimeInterval
+    let ttl : Int
     let ips : Array<String>
 }
 

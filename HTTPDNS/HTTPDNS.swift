@@ -112,7 +112,7 @@ public class HTTPDNS {
     }
     
     func setCache(domain: String, record: DNSRecord) -> HTTPDNSResult {
-        let timeout = Utils().getSecondTimestamp() + record.ttl
+        let timeout = NSDate().timeIntervalSince1970 +  Double(record.ttl) * 1000
         var res = HTTPDNSResult.init(ip: record.ip, ips: record.ips, timeout: timeout, cached: true)
         self.cache.updateValue(res, forKey:domain)
         res.cached = false
@@ -123,7 +123,7 @@ public class HTTPDNS {
         guard let res = self.cache[domain] else {
             return nil
         }
-        if (res.timeout <= Utils().getSecondTimestamp()){
+        if (res.timeout <= NSDate().timeIntervalSince1970){
             self.cache.removeValueForKey(domain)
             return nil
         }
