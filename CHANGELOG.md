@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+*0.7.0*
+---
+- update ttl to Int
+- change Int to NSTimeInterval
+- update Test
+
 *0.6.0*
 ---
 
