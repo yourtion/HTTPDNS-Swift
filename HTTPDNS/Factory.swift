@@ -15,54 +15,54 @@ struct DNSRecord {
 }
 
 protocol HTTPDNSBaseProtocol {
-    func parseResult (data: NSData) -> DNSRecord!
-    func getRequestString(domain: String) -> String
+    func parseResult (_ data: Data) -> DNSRecord!
+    func getRequestString(_ domain: String) -> String
 }
 
 class HTTPDNSBase: HTTPDNSBaseProtocol {
     
-    func getRequestString(domain: String) -> String {
+    func getRequestString(_ domain: String) -> String {
         return ""
     }
     
-    func parseResult (data: NSData) -> DNSRecord! {
+    func parseResult (_ data: Data) -> DNSRecord! {
         return nil
     }
     
-    func requsetRecord(domain: String, callback: (result:DNSRecord!) -> Void) {
+    func requsetRecord(_ domain: String, callback: @escaping (_ result:DNSRecord?) -> Void) {
         let urlString = getRequestString(domain)
-        guard let url = NSURL(string: urlString) else {
+        guard let url = URL(string: urlString) else {
             print("Error: cannot create URL")
             return
         }
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
-            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        let task = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
+            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!)
             guard let responseData = data else {
                 print("Error: Didn't receive data")
                 return
             }
             guard error == nil else {
                 print("Error: Calling GET error on " + urlString)
-                print(error)
+                print(error!)
                 return
             }
             guard let res = self.parseResult(responseData) else {
-                return callback(result: nil)
+                return callback(nil)
             }
-            callback(result: res)
-        }
+            callback(res)
+        }) 
         task.resume()
     }
     
-    func requsetRecordSync(domain: String) -> DNSRecord! {
+    func requsetRecordSync(_ domain: String) -> DNSRecord! {
         let urlString = getRequestString(domain)
         print(urlString)
-        guard let url = NSURL(string: urlString) else {
+        guard let url = URL(string: urlString) else {
             print("Error: Can't create URL")
             return nil
         }
-        guard let data = NSData.init(contentsOfURL: url) else {
+        guard let data = try? Data.init(contentsOf: url) else {
             print("Error: Did not receive data")
             return nil
         }
@@ -79,7 +79,7 @@ class HTTPDNSFactory {
     func getDNSPod() -> HTTPDNSBase {
         return DNSpod()
     }
-    func getAliYun(key:String! = "100000") -> HTTPDNSBase {
+    func getAliYun(_ key:String! = "100000") -> HTTPDNSBase {
         return AliYun(account:key)
     }
 }

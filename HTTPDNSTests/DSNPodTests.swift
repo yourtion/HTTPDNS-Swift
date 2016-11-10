@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import HTTPDNS
 
 class DNSPod_iOSTests: XCTestCase {
     
@@ -37,14 +36,14 @@ class DNSPod_iOSTests: XCTestCase {
     func testParseResult() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let RES_Data = RES_String.dataUsingEncoding(NSUTF8StringEncoding)
+        let RES_Data = RES_String.data(using: String.Encoding.utf8)
         let RES_Parsed = CLASS.parseResult(RES_Data!)
-        XCTAssertEqual(RES_Parsed.ip, "192.243.118.110")
-        XCTAssertEqual(RES_Parsed.ips.count, 3)
-        XCTAssertEqual(RES_Parsed.ips[0], "192.243.118.110")
-        XCTAssertEqual(RES_Parsed.ips[1], "192.243.118.111")
-        XCTAssertEqual(RES_Parsed.ips[2], "192.243.118.112")
-        XCTAssertEqual(RES_Parsed.ttl, 600)
+        XCTAssertEqual(RES_Parsed?.ip, "192.243.118.110")
+        XCTAssertEqual(RES_Parsed?.ips.count, 3)
+        XCTAssertEqual(RES_Parsed?.ips[0], "192.243.118.110")
+        XCTAssertEqual(RES_Parsed?.ips[1], "192.243.118.111")
+        XCTAssertEqual(RES_Parsed?.ips[2], "192.243.118.112")
+        XCTAssertEqual(RES_Parsed?.ttl, 600)
     }
     
 }

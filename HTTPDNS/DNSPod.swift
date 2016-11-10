@@ -11,16 +11,16 @@ import Foundation
 class DNSpod : HTTPDNSBase {
     let SERVER_ADDRESS = "http://119.29.29.29/"
     
-    override func getRequestString(domain: String) -> String {
+    override func getRequestString(_ domain: String) -> String {
         return self.SERVER_ADDRESS + "d?dn=" + domain + "&ttl=1"
     }
     
-    override func parseResult (data: NSData) -> DNSRecord! {
-        let str = String(data: data, encoding: NSUTF8StringEncoding)
-        let strArray = str!.componentsSeparatedByString(",")
+    override func parseResult (_ data: Data) -> DNSRecord! {
+        let str = String(data: data, encoding: String.Encoding.utf8)
+        let strArray = str!.components(separatedBy: ",")
         let ipStr = strArray[0] as String
-        let ipList = ipStr.componentsSeparatedByString(";") as Array<String>
-        guard let ttl = Int(strArray[1]) where (ipList.count > 0 && ttl > 0) else {
+        let ipList = ipStr.components(separatedBy: ";") as Array<String>
+        guard let ttl = Int(strArray[1]), (ipList.count > 0 && ttl > 0) else {
             return nil
         }
         return DNSRecord.init(ip: ipList[0], ttl: ttl, ips: ipList)

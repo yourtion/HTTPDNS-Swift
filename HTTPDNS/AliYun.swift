@@ -16,15 +16,15 @@ class AliYun : HTTPDNSBase {
         accountId = account
     }
     
-    override func getRequestString(domain: String) -> String {
+    override func getRequestString(_ domain: String) -> String {
         return self.SERVER_ADDRESS + accountId + "/d?host=" + domain
     }
     
-    override func parseResult (data: NSData) -> DNSRecord! {
+    override func parseResult (_ data: Data) -> DNSRecord! {
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data,options:NSJSONReadingOptions.AllowFragments) as! NSDictionary
-            let ipList = json.objectForKey("ips") as! Array<String>
-            guard let ttl = json.objectForKey("ttl") as? Int where (ipList.count > 0 && ttl > 0) else {
+            let json = try JSONSerialization.jsonObject(with: data,options:JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+            let ipList = json.object(forKey: "ips") as! Array<String>
+            guard let ttl = json.object(forKey: "ttl") as? Int, (ipList.count > 0 && ttl > 0) else {
                 return nil
             }
             return DNSRecord.init(ip: ipList[0], ttl: ttl, ips: ipList)

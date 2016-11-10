@@ -247,8 +247,18 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Yourtion;
 				TargetAttributes = {
+					CB419F571CC8E57700EF1886 = {
+						LastSwiftMigration = 0810;
+					};
+					CB5BBFAC1C4214E500564786 = {
+						LastSwiftMigration = 0810;
+					};
 					CB9C76431C1D544A003502B6 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0810;
+					};
+					CB9C764F1C1D5451003502B6 = {
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -380,6 +390,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -393,6 +404,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -406,6 +418,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -419,6 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -532,6 +546,7 @@
 				PRODUCT_NAME = HTTPDNS;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -551,6 +566,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.HTTPDNS;
 				PRODUCT_NAME = HTTPDNS;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -571,6 +587,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -590,6 +607,7 @@
 				PRODUCT_NAME = HTTPDNS;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

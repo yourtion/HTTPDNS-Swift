@@ -17,7 +17,7 @@ public struct HTTPDNSResult {
     /// IP array
     public let ips : Array<String>
     /// Timeout
-    let timeout : NSTimeInterval
+    let timeout : TimeInterval
     /// is Cached
     public var cached : Bool
     
@@ -35,20 +35,20 @@ public struct HTTPDNSResult {
  */
 public enum Provider {
     /// DNSPod
-    case DNSPod
+    case dnsPod
     /// AliYun
-    case AliYun
+    case aliYun
 }
 
 /// HTTPDNS Client
-public class HTTPDNS {
+open class HTTPDNS {
     
-    private init() {}
-    private var cache = Dictionary<String,HTTPDNSResult>()
-    private var DNS = HTTPDNSFactory().getAliYun()
+    fileprivate init() {}
+    fileprivate var cache = Dictionary<String,HTTPDNSResult>()
+    fileprivate var DNS = HTTPDNSFactory().getAliYun()
     
     /// HTTPDNS sharedInstance
-    public static let sharedInstance = HTTPDNS()
+    open static let sharedInstance = HTTPDNS()
     
     /**
      Switch HTTPDNS provider
@@ -56,13 +56,13 @@ public class HTTPDNS {
      - parameter provider: DNSPod or AliYun
      - parameter key:      provider key
      */
-    public func switchProvider (provider:Provider, key:String!) {
+    open func switchProvider (_ provider:Provider, key:String!) {
         self.cleanCache()
         switch provider {
-        case .DNSPod:
+        case .dnsPod:
             DNS = HTTPDNSFactory().getDNSPod()
             break
-        case .AliYun:
+        case .aliYun:
             DNS = HTTPDNSFactory().getAliYun(key)
             break
         }
@@ -74,16 +74,16 @@ public class HTTPDNS {
      - parameter domain:   domain name
      - parameter callback: callback block with DNS record
      */
-    public func getRecord(domain: String, callback: (result:HTTPDNSResult!) -> Void) {
+    open func getRecord(_ domain: String, callback: @escaping (_ result:HTTPDNSResult?) -> Void) {
         let res = getCacheResult(domain)
         if (res != nil) {
-            return callback(result: res)
+            return callback(res)
         }
         DNSpod().requsetRecord(domain, callback: { (res) -> Void in
             guard let res = self.DNS.requsetRecordSync(domain) else {
-                return callback(result: nil)
+                return callback(nil)
             }
-            callback(result: self.setCache(domain, record: res))
+            callback(self.setCache(domain, record: res))
         })
     }
     
@@ -94,7 +94,7 @@ public class HTTPDNS {
      
      - returns: DSN record
      */
-    public func getRecordSync(domain: String) -> HTTPDNSResult! {
+    open func getRecordSync(_ domain: String) -> HTTPDNSResult! {
         guard let res = getCacheResult(domain) else {
             guard let res = self.DNS.requsetRecordSync(domain) else {
                 return nil
@@ -107,24 +107,24 @@ public class HTTPDNS {
     /**
      Clean all DNS record cahce
      */
-    public func cleanCache() {
+    open func cleanCache() {
         self.cache.removeAll()
     }
     
-    func setCache(domain: String, record: DNSRecord) -> HTTPDNSResult {
-        let timeout = NSDate().timeIntervalSince1970 +  Double(record.ttl) * 1000
+    func setCache(_ domain: String, record: DNSRecord) -> HTTPDNSResult {
+        let timeout = Date().timeIntervalSince1970 +  Double(record.ttl) * 1000
         var res = HTTPDNSResult.init(ip: record.ip, ips: record.ips, timeout: timeout, cached: true)
         self.cache.updateValue(res, forKey:domain)
         res.cached = false
         return res
     }
     
-    func getCacheResult(domain: String) -> HTTPDNSResult! {
+    func getCacheResult(_ domain: String) -> HTTPDNSResult! {
         guard let res = self.cache[domain] else {
             return nil
         }
-        if (res.timeout <= NSDate().timeIntervalSince1970){
-            self.cache.removeValueForKey(domain)
+        if (res.timeout <= Date().timeIntervalSince1970){
+            self.cache.removeValue(forKey: domain)
             return nil
         }
         return res
