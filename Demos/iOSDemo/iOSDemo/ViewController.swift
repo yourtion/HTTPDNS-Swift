@@ -66,7 +66,7 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
         HTTPDNS.sharedInstance.cleanCache()
     }
     
-    func request(urlString: String, callback: (result:String!) -> Void) {
+    func request(urlString: String, callback: (_ result:String!) -> Void) {
         guard let url = NSURL(string: urlString) else {
             return callback(result: nil)
         }
