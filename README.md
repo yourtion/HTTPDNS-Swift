@@ -6,11 +6,11 @@
 [![Platform](https://img.shields.io/cocoapods/p/HTTPDNS-Swift.svg?style=flat)](http://cocoapods.org/pods/HTTPDNS-Swift)
 [![Build Status](https://travis-ci.org/yourtion/HTTPDNS-Swift.svg?branch=master)](https://travis-ci.org/yourtion/HTTPDNS-Swift)
 
-HTTPDNS 库 Swift 实现（支持 DNSPod 与 AliyunDNS ）
+HTTPDNS 库 Swift 实现，支持 DNSPod、AliYunDNS、Google 等（方便扩展）
 
 - DNSPod 的 [移动解析服务D+](https://www.dnspod.cn/httpdns) 
-
 - AliYun HTTPDNS [HTTPDNS API](https://help.aliyun.com/document_detail/dpa/sdk/RESTful/httpdns.html?spm=5176.docdpa/sdk/OneSDK/quick-start-ios.6.104.wmIJqo)
+- Google DNS-over-HTTP [介绍](https://developers.google.com/speed/public-dns/docs/dns-over-https)
 
 ## 安装
 
@@ -69,10 +69,17 @@ HTTPDNS.sharedInstance.switchProvider(.AliYun, key: "100000")
 HTTPDNS.sharedInstance.switchProvider(.DNSPod, key: nil)
 ```
 
+切换到 Google DNS-over-HTTP，`Key` 为 `nil`
+
+```swift
+HTTPDNS.sharedInstance.switchProvider(.Google, key: nil)
+```
+
 ## TODO
 
 - [X] 实现 DNSPod 免费版功能
 - [ ] 实现 DNSPod 企业版功能（认证接入）
 - [X] 实现AliYun HTTPDNS
+- [X] 实现 Google DNS-over-HTTP
 - [X] 提供同步获取方法
 - [X] 提供清除缓存方法
