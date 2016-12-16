@@ -9,11 +9,18 @@
 import Foundation
 
 class AliYun : HTTPDNSBase {
-    let SERVER_ADDRESS = "http://203.107.1.1/"
+    let SERVER_ADDRESS_HTTP = "http://203.107.1.1/"
+    let SERVER_ADDRESS_HTTPS = "https://203.107.1.1/"
+    var SERVER_ADDRESS: String
     var accountId : String
     
-    init (account:String) {
+    init (account:String, https:Bool = true) {
         accountId = account
+        if(https) {
+            SERVER_ADDRESS = SERVER_ADDRESS_HTTPS
+        } else {
+            SERVER_ADDRESS = SERVER_ADDRESS_HTTP
+        }
     }
     
     override func getRequestString(_ domain: String) -> String {
