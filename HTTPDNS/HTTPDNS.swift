@@ -45,7 +45,7 @@ open class HTTPDNS {
     
     fileprivate init() {}
     fileprivate var cache = Dictionary<String,HTTPDNSResult>()
-    fileprivate var DNS = HTTPDNSFactory().getAliYun()
+    fileprivate var DNS = HTTPDNSFactory().getDNSPod()
     
     /// HTTPDNS sharedInstance
     open static let sharedInstance = HTTPDNS()
@@ -79,7 +79,7 @@ open class HTTPDNS {
         if (res != nil) {
             return callback(res)
         }
-        DNSpod().requsetRecord(domain, callback: { (res) -> Void in
+        DNS.requsetRecord(domain, callback: { (res) -> Void in
             guard let res = self.DNS.requsetRecordSync(domain) else {
                 return callback(nil)
             }
