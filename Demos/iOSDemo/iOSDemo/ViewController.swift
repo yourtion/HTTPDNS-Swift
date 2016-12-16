@@ -2,131 +2,83 @@
 //  ViewController.swift
 //  iOSDemo
 //
-//  Created by YourtionGuo on 6/18/16.
+//  Created by YourtionGuo on 15/12/2016.
 //  Copyright © 2016 Yourtion. All rights reserved.
 //
 
 import UIKit
 import HTTPDNS
 
-class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDelegate {
+class ViewController: UIViewController,URLSessionTaskDelegate {
     
     @IBOutlet weak var resultText: UITextView!
     @IBOutlet weak var urlField: UITextField!
-    var data = NSMutableData()
-    var host = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
+        HTTPDNS.sharedInstance.switchProvider(.google, key: nil)
+//        HTTPDNS.sharedInstance.getRecord("apple.com", callback: { (result) -> Void in
+//            print("Async QQ.com ", result ?? "Faild")
+//        })
         
-        HTTPDNS.sharedInstance.getRecord("www.qq.com", callback: { (result) -> Void in
-            print("Async QQ.com", result)
-        })
+        requestHTTPS(URL(string: "https://api.github.com/users/octocat/orgs"))
         
-        HTTPDNS.sharedInstance.switchProvider(.DNSPod, key: nil)
-        HTTPDNS.sharedInstance.cleanCache()
-        
-        print("Sync baidu.com", HTTPDNS.sharedInstance.getRecordSync("www.baidu.com"))
-        
-        requestHTTPS(NSURL(string: "https://api.github.com/users/octocat/orgs")!)
-        
-        requestHTTP(NSURL(string: "http://baidu.com/"))
-        
-        print("Sync baidu.com cached", HTTPDNS.sharedInstance.getRecordSync("www.baidu.com"))
-        
+//        requestHTTP(URL(string: "http://baidu.com/"))
+
     }
-    
-    @IBAction func getSync(sender: AnyObject) {
-        guard let domain = urlField.text else {
-            return resultText.text = "Domain Error."
-        }
-        let result = HTTPDNS.sharedInstance.getRecordSync(domain)
-        if (result != nil) {
-            return resultText.text = "Domain: \(domain) \n\n \(result.description)"
-        }
-        resultText.text = "Request Domain Error."
-    }
-    
-    @IBAction func getAsync(sender: AnyObject) {
-        guard let domain = urlField.text else {
-            return resultText.text = "Domain Error."
-        }
-        HTTPDNS.sharedInstance.getRecord(domain, callback: { (result) in
-            dispatch_async(dispatch_get_main_queue(),{
-                if (result != nil) {
-                    return self.resultText.text = "Domain: \(domain) \n\n \(result.description)"
-                }
-                self.resultText.text = "Request Domain Error."
-            })
-        })
-    }
-    
-    @IBAction func cleanCache(sender: AnyObject) {
-        HTTPDNS.sharedInstance.cleanCache()
-    }
-    
-    func request(urlString: String, callback: (_ result:String!) -> Void) {
-        guard let url = NSURL(string: urlString) else {
-            return callback(result: nil)
-        }
-        if(urlString.containsString("https://")) {
-            requestHTTPS(url)
-        } else if (urlString.containsString("https://")){
-            requestHTTP(url)
-        } else {
-            callback(result: nil)
-        }
-    }
-    
-    func requestHTTPS(url:NSURL!) {
+
+    func requestHTTPS(_ url:URL!) {
         let host = url.host
-        self.host = host!
         let res = HTTPDNS.sharedInstance.getRecordSync(host!)
         var newURL = url.absoluteString
         if (res != nil) {
-            newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: res.ip)
+          newURL = url.absoluteString.replacingOccurrences(of: host!, with: (res?.ip)!)
         }
         print("RequestHTTPS NewURL:\(newURL)")
         
-        let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
-        let request = NSMutableURLRequest(URL: NSURL(string: newURL)!)
+        let sessionConfiguration = URLSessionConfiguration.default
+        let session = URLSession(configuration: sessionConfiguration, delegate: self, delegateQueue: nil)
+        let request = NSMutableURLRequest(url: URL(string: newURL)!)
         request.setValue(host, forHTTPHeaderField: "host")
-        let task = session.dataTaskWithRequest(request)
+        let task = session.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
+            let str = String(data: data!, encoding: String.Encoding.utf8)
+            print("RequestHTTP response:\(str)") // IT PRINTS nil :(
+        }
+
         task.resume()
         
     }
     
-    func requestHTTP(url:NSURL!) {
+    func requestHTTP(_ url:URL!) {
         let host = url.host
         let res = HTTPDNS.sharedInstance.getRecordSync(host!)
         var newURL = url.absoluteString
         if (res != nil) {
-            newURL = url.absoluteString.stringByReplacingOccurrencesOfString(host!, withString: res.ip)
+            newURL = url.absoluteString.replacingOccurrences(of: host!, with: (res?.ip)!)
         }
         print("RequestHTTP NewURL:\(newURL)")
         
-        let request = NSMutableURLRequest(URL: NSURL(string: newURL)!)
+        let request = NSMutableURLRequest(url: URL(string: newURL)!)
         request.setValue(host, forHTTPHeaderField: "host")
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) -> Void in
-            let str = NSString(data: NSData(data: data!), encoding: NSUTF8StringEncoding)
+        let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) -> Void in
+            let str = String(data: data!, encoding: String.Encoding.utf8)
             print("RequestHTTP response:\(str)") // IT PRINTS nil :(
         }
         task.resume()
         
     }
     
-    
-    func evaluateServerTrust(serverTrust:SecTrustRef!, domain:String!) -> Bool{
+    func evaluateServerTrust(_ serverTrust:SecTrust!, domain:String!) -> Bool{
         /*
          * 创建证书校验策略
          */
         let policies = NSMutableArray()
         if (domain != nil) {
-            policies.addObject(SecPolicyCreateSSL(true, domain))
+            policies.add(SecPolicyCreateSSL(true, domain as CFString?))
         } else {
-            policies.addObject(SecPolicyCreateBasicX509())
+            policies.add(SecPolicyCreateBasicX509())
         }
         
         /*
@@ -140,47 +92,35 @@ class ViewController: UIViewController,NSURLSessionDelegate,NSURLSessionDataDele
          * 的情况下serverTrust可以被验证通过，https://developer.apple.com/library/ios/technotes/tn2232/_index.html
          * 关于SecTrustResultType的详细信息请参考SecTrust.h
          */
-        var result = SecTrustResultType()
-        SecTrustEvaluate(serverTrust, &result);
+        var result:SecTrustResultType = .deny
+        SecTrustEvaluate(serverTrust, &result)
         
-        return result == UInt32(kSecTrustResultUnspecified) || result == UInt32(kSecTrustResultProceed)
+        return result == .unspecified || result == .proceed
     }
     
-    
-    func URLSession(session: NSURLSession, didReceiveChallenge challenge: NSURLAuthenticationChallenge, completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
+    func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        var disposition:URLSession.AuthChallengeDisposition = .performDefaultHandling
         
-        var disposition:NSURLSessionAuthChallengeDisposition = .PerformDefaultHandling
+        var credential = URLCredential()
         
-        var credential = NSURLCredential()
-        
-        let host = self.host
+        var host = task.originalRequest?.allHTTPHeaderFields?["Host"]
+        if (host == nil) {
+            host = task.originalRequest?.url?.host
+        }
         
         if (challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust) {
             if (self.evaluateServerTrust(challenge.protectionSpace.serverTrust!, domain: host)) {
-                disposition = .UseCredential
-                credential = NSURLCredential(forTrust:challenge.protectionSpace.serverTrust!)
+                disposition = .useCredential
+                credential = URLCredential(trust:challenge.protectionSpace.serverTrust!)
             } else {
-                disposition = .CancelAuthenticationChallenge
+                disposition = .cancelAuthenticationChallenge
             }
         } else {
-            disposition = .PerformDefaultHandling
+            disposition = .performDefaultHandling
         }
         // 对于其他的challenges直接使用默认的验证方案
         completionHandler(disposition, credential)
     }
     
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?){
-        let str = NSString(data: NSData(data: self.data), encoding: NSUTF8StringEncoding)
-        print("RequestHTTPS Response:\(str)") // IT PRINTS nil :(
-    }
-    
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask, didReceiveData data: NSData){
-        self.data.appendData(data)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
 }

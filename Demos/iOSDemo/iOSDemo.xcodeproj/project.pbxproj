@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB289D6B1E02913D001EDA8C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB289D6A1E02913D001EDA8C /* ViewController.swift */; };
+		CB289D6D1E02915D001EDA8C /* HTTPDNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB289D6C1E02915D001EDA8C /* HTTPDNS.framework */; };
+		CB289D6E1E02915D001EDA8C /* HTTPDNS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CB289D6C1E02915D001EDA8C /* HTTPDNS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBEF15601D1531050028B2B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF155F1D1531050028B2B1 /* AppDelegate.swift */; };
-		CBEF15621D1531050028B2B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEF15611D1531050028B2B1 /* ViewController.swift */; };
 		CBEF15651D1531050028B2B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBEF15631D1531050028B2B1 /* Main.storyboard */; };
 		CBEF15671D1531050028B2B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBEF15661D1531050028B2B1 /* Assets.xcassets */; };
 		CBEF156A1D1531050028B2B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBEF15681D1531050028B2B1 /* LaunchScreen.storyboard */; };
-		CBEF15721D15312E0028B2B1 /* HTTPDNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBEF15711D15312E0028B2B1 /* HTTPDNS.framework */; };
-		CBEF15731D15312E0028B2B1 /* HTTPDNS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBEF15711D15312E0028B2B1 /* HTTPDNS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CBEF15741D15312F0028B2B1 /* Embed Frameworks */ = {
+		CB289D6F1E02915D001EDA8C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CBEF15731D15312E0028B2B1 /* HTTPDNS.framework in Embed Frameworks */,
+				CB289D6E1E02915D001EDA8C /* HTTPDNS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,14 +31,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CB289D6A1E02913D001EDA8C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB289D6C1E02915D001EDA8C /* HTTPDNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTTPDNS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEF155C1D1531050028B2B1 /* iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBEF155F1D1531050028B2B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CBEF15611D1531050028B2B1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CBEF15641D1531050028B2B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBEF15661D1531050028B2B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBEF15691D1531050028B2B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBEF156B1D1531050028B2B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBEF15711D15312E0028B2B1 /* HTTPDNS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = HTTPDNS.framework; path = "/Users/Yourtion/Library/Developer/Xcode/DerivedData/HTTPDNS-aijyeumpwakxyjcrgzomehtjxvbe/Build/Products/Debug-iphoneos/HTTPDNS.framework"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBEF15721D15312E0028B2B1 /* HTTPDNS.framework in Frameworks */,
+				CB289D6D1E02915D001EDA8C /* HTTPDNS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +56,7 @@
 		CBEF15531D1531050028B2B1 = {
 			isa = PBXGroup;
 			children = (
-				CBEF15711D15312E0028B2B1 /* HTTPDNS.framework */,
+				CB289D6C1E02915D001EDA8C /* HTTPDNS.framework */,
 				CBEF155E1D1531050028B2B1 /* iOSDemo */,
 				CBEF155D1D1531050028B2B1 /* Products */,
 			);
@@ -74,11 +74,11 @@
 			isa = PBXGroup;
 			children = (
 				CBEF155F1D1531050028B2B1 /* AppDelegate.swift */,
-				CBEF15611D1531050028B2B1 /* ViewController.swift */,
 				CBEF15631D1531050028B2B1 /* Main.storyboard */,
 				CBEF15661D1531050028B2B1 /* Assets.xcassets */,
 				CBEF15681D1531050028B2B1 /* LaunchScreen.storyboard */,
 				CBEF156B1D1531050028B2B1 /* Info.plist */,
+				CB289D6A1E02913D001EDA8C /* ViewController.swift */,
 			);
 			path = iOSDemo;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 				CBEF15581D1531050028B2B1 /* Sources */,
 				CBEF15591D1531050028B2B1 /* Frameworks */,
 				CBEF155A1D1531050028B2B1 /* Resources */,
-				CBEF15741D15312F0028B2B1 /* Embed Frameworks */,
+				CB289D6F1E02915D001EDA8C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -111,7 +111,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Yourtion;
 				TargetAttributes = {
 					CBEF155B1D1531050028B2B1 = {
@@ -155,7 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBEF15621D1531050028B2B1 /* ViewController.swift in Sources */,
+				CB289D6B1E02913D001EDA8C /* ViewController.swift in Sources */,
 				CBEF15601D1531050028B2B1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,8 +196,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -241,8 +243,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -261,6 +265,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -274,6 +279,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.iOSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -286,6 +292,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourtion.iOSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};
