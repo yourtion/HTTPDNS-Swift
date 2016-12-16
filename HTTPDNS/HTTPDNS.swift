@@ -38,6 +38,8 @@ public enum Provider {
     case dnsPod
     /// AliYun
     case aliYun
+    /// Google
+    case google
 }
 
 /// HTTPDNS Client
@@ -64,6 +66,9 @@ open class HTTPDNS {
             break
         case .aliYun:
             DNS = HTTPDNSFactory().getAliYun(key)
+            break
+        case .google:
+            DNS = HTTPDNSFactory().getGoogle()
             break
         }
     }

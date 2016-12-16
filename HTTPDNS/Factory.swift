@@ -82,4 +82,7 @@ class HTTPDNSFactory {
     func getAliYun(_ key:String = "100000") -> HTTPDNSBase {
         return AliYun(account:key)
     }
+    func getGoogle() -> HTTPDNSBase {
+        return Google()
+    }
 }

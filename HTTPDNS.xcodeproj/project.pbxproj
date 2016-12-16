@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB289D681E028BD5001EDA8C /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB289D671E028BD5001EDA8C /* Google.swift */; };
+		CB289D691E028BD5001EDA8C /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB289D671E028BD5001EDA8C /* Google.swift */; };
+		CB289D711E0298EB001EDA8C /* GoogleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB289D701E0298EB001EDA8C /* GoogleTest.swift */; };
+		CB289D721E0298EB001EDA8C /* GoogleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB289D701E0298EB001EDA8C /* GoogleTest.swift */; };
+		CB289D731E0299B0001EDA8C /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB289D671E028BD5001EDA8C /* Google.swift */; };
 		CB37BAE51D1D16CA0028C780 /* HTTPDNSTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB37BAE41D1D16CA0028C780 /* HTTPDNSTest.swift */; };
 		CB37BAE61D1D16CA0028C780 /* HTTPDNSTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB37BAE41D1D16CA0028C780 /* HTTPDNSTest.swift */; };
 		CB419F701CC8E8A800EF1886 /* DSNPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5BBFA31C42149300564786 /* DSNPodTests.swift */; };
@@ -51,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB289D671E028BD5001EDA8C /* Google.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
+		CB289D701E0298EB001EDA8C /* GoogleTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleTest.swift; sourceTree = "<group>"; };
 		CB37BAE41D1D16CA0028C780 /* HTTPDNSTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDNSTest.swift; sourceTree = "<group>"; };
 		CB419F661CC8E57700EF1886 /* HTTPDNSTests_iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTTPDNSTests_iOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB5BBFA31C42149300564786 /* DSNPodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNPodTests.swift; sourceTree = "<group>"; };
@@ -102,6 +109,7 @@
 		CB5BBFA21C42149300564786 /* HTTPDNSTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB289D701E0298EB001EDA8C /* GoogleTest.swift */,
 				CB37BAE41D1D16CA0028C780 /* HTTPDNSTest.swift */,
 				CB5BBFA31C42149300564786 /* DSNPodTests.swift */,
 				CB745C8F1CC8CEAB0023C4C2 /* AliYunTest.swift */,
@@ -139,6 +147,7 @@
 				CB745C841CC8B7FB0023C4C2 /* Factory.swift */,
 				CB745C7F1CC8AC790023C4C2 /* DNSPod.swift */,
 				CB745C891CC8BCF00023C4C2 /* AliYun.swift */,
+				CB289D671E028BD5001EDA8C /* Google.swift */,
 			);
 			path = HTTPDNS;
 			sourceTree = "<group>";
@@ -318,6 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB289D731E0299B0001EDA8C /* Google.swift in Sources */,
+				CB289D721E0298EB001EDA8C /* GoogleTest.swift in Sources */,
 				CB37BAE61D1D16CA0028C780 /* HTTPDNSTest.swift in Sources */,
 				CB419F7A1CC8E8DA00EF1886 /* HTTPDNS.swift in Sources */,
 				CB419F7B1CC8E8DA00EF1886 /* Factory.swift in Sources */,
@@ -332,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB289D711E0298EB001EDA8C /* GoogleTest.swift in Sources */,
 				CB37BAE51D1D16CA0028C780 /* HTTPDNSTest.swift in Sources */,
 				CB419F751CC8E8CF00EF1886 /* HTTPDNS.swift in Sources */,
 				CB419F761CC8E8CF00EF1886 /* Factory.swift in Sources */,
@@ -350,6 +362,7 @@
 				CB745C8A1CC8BCF00023C4C2 /* AliYun.swift in Sources */,
 				CB9C76711C1D5567003502B6 /* HTTPDNS.swift in Sources */,
 				CB745C801CC8AC790023C4C2 /* DNSPod.swift in Sources */,
+				CB289D681E028BD5001EDA8C /* Google.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +374,7 @@
 				CB745C8B1CC8BCF00023C4C2 /* AliYun.swift in Sources */,
 				CB9C76721C1D5567003502B6 /* HTTPDNS.swift in Sources */,
 				CB745C811CC8AC790023C4C2 /* DNSPod.swift in Sources */,
+				CB289D691E028BD5001EDA8C /* Google.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
