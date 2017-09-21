@@ -32,15 +32,16 @@ class HTTPDNSTest: XCTestCase {
         let rec1 = client.getCacheResult(domain)
         XCTAssertNil(rec1)
         
-        client.setCache(domain, record: record)
-        let rec2 = client.getCacheResult(domain)
-        XCTAssertNotNil(rec2)
-        XCTAssertEqual(rec2?.ip, record.ip)
-        XCTAssertEqual(rec2?.cached, true)
+        let rec2 = client.setCache(domain, record: record)
+        let rec3 = client.getCacheResult(domain)
+        XCTAssertNotNil(rec3)
+        XCTAssertEqual(rec3?.ip, record.ip)
+        XCTAssertEqual(rec3?.ip, rec2.ip)
+        XCTAssertEqual(rec3?.cached, true)
         
         client.cleanCache()
-        let rec3 = client.getCacheResult(domain)
-        XCTAssertNil(rec3)
+        let rec4 = client.getCacheResult(domain)
+        XCTAssertNil(rec4)
     }
     
     func testSyncDNSPod() {
