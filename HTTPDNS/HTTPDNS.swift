@@ -85,6 +85,11 @@ open class HTTPDNS {
             return callback(res)
         }
         DNS.requsetRecord(domain, callback: { (res) -> Void in
+            
+            guard let _ = res else {
+                return callback(nil)
+            }
+            
             guard let res = self.DNS.requsetRecordSync(domain) else {
                 return callback(nil)
             }
