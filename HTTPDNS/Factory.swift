@@ -33,20 +33,27 @@ class HTTPDNSBase: HTTPDNSBaseProtocol {
         let urlString = getRequestString(domain)
         guard let url = URL(string: urlString) else {
             print("Error: cannot create URL")
+            callback(nil)
             return
         }
         
         let task = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
-            print(NSString(data: data!, encoding: String.Encoding.utf8.rawValue)!)
             guard let responseData = data else {
                 print("Error: Didn't receive data")
+                callback(nil)
                 return
             }
             guard error == nil else {
                 print("Error: Calling GET error on " + urlString)
-                print(error!)
+                print(error?.localizedDescription)
+                callback(nil)
                 return
             }
+    
+            if let result = NSString(data: responseData, encoding: String.Encoding.utf8.rawValue) {
+                print("result = \(result)")
+            }
+            
             guard let res = self.parseResult(responseData) else {
                 return callback(nil)
             }
