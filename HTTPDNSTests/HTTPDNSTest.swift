@@ -36,7 +36,7 @@ class HTTPDNSTest: XCTestCase {
         let rec3 = client.getCacheResult(domain)
         XCTAssertNotNil(rec3)
         XCTAssertEqual(rec3?.ip, record.ip)
-        XCTAssertEqual(rec3?.ip, rec2.ip)
+        XCTAssertEqual(rec3?.ip, rec2?.ip)
         XCTAssertEqual(rec3?.cached, true)
         
         client.cleanCache()
