@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HTTPDNS-Swift"
-  s.version      = "0.8.0"
+  s.version      = "0.9.0"
   s.summary      = "Use HTTP to resolve domain (Swift)"
 
   s.description  = <<-DESC
