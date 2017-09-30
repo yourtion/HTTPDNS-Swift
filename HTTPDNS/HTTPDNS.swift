@@ -117,7 +117,7 @@ open class HTTPDNS {
         self.cache.removeAll()
     }
     
-    func setCache(_ domain: String, record: DNSRecord) -> HTTPDNSResult? {
+    func setCache(_ domain: String, record: DNSRecord?) -> HTTPDNSResult? {
         guard let _record = record else { return nil }
         let timeout = Date().timeIntervalSince1970 + Double(_record.ttl) * 1000
         var res = HTTPDNSResult.init(ip: _record.ip, ips: _record.ips, timeout: timeout, cached: true)
