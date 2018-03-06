@@ -85,10 +85,11 @@ open class HTTPDNS {
             return callback(res)
         }
         DNS.requsetRecord(domain, callback: { (res) -> Void in
-            guard let res = self.DNS.requsetRecordSync(domain) else {
+            if let res = res {
+                callback(self.setCache(domain, record: res))
+            } else {
                 return callback(nil)
             }
-            callback(self.setCache(domain, record: res))
         })
     }
     
@@ -116,9 +117,10 @@ open class HTTPDNS {
         self.cache.removeAll()
     }
     
-    func setCache(_ domain: String, record: DNSRecord) -> HTTPDNSResult {
-        let timeout = Date().timeIntervalSince1970 +  Double(record.ttl) * 1000
-        var res = HTTPDNSResult.init(ip: record.ip, ips: record.ips, timeout: timeout, cached: true)
+    func setCache(_ domain: String, record: DNSRecord?) -> HTTPDNSResult? {
+        guard let _record = record else { return nil }
+        let timeout = Date().timeIntervalSince1970 + Double(_record.ttl) * 1000
+        var res = HTTPDNSResult.init(ip: _record.ip, ips: _record.ips, timeout: timeout, cached: true)
         self.cache.updateValue(res, forKey:domain)
         res.cached = false
         return res
